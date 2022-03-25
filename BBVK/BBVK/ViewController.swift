@@ -39,11 +39,22 @@ class ViewController: UIViewController {
       let understoodButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Entendido")
       view.addSubview(understoodButton)
       understoodButton.addAnchors(left: 30, top: nil, right: 30, bottom: 35)
-      
-      
+       understoodButton.addTarget(self, action: #selector(verificationAction), for: .touchUpInside)
 
       
    }
-      
+    
+
+        
+        
+    }
+
+
+extension ViewController{
+    @objc func verificationAction(){
+        let verificationVC = verificacionIdentidadWelcome()
+        verificationVC.modalPresentationStyle = .fullScreen
+        self.present(verificationVC, animated: true, completion: nil)
+    }
 }
 
