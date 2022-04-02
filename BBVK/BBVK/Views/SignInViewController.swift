@@ -11,7 +11,7 @@ class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-initUI()
+
        
         // Do any additional setup after loading the view.
     }
@@ -21,6 +21,4 @@ initUI()
         
     }
     
-    
 
-}
