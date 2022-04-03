@@ -119,15 +119,8 @@
 		AC2188CA27F973B900545EC9 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				ACFE61B427F8EC17009EE2C8 /* uploaddocument sunview.swift */,
-				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
-				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
-				ACFE61B027F8EC17009EE2C8 /* DatosViewController.swift */,
-				ACFA967827F9250700323A37 /* FormViewController.swift */,
-				ACFA967A27F9250700323A37 /* CountryViewController.swift */,
-				ACFE61B127F8EC17009EE2C8 /* PasswordCreationView.swift */,
-				ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */,
-				ACFE61B227F8EC17009EE2C8 /* ThankYouViewController.swift */,
+				AC2188CF27F9F3CC00545EC9 /* Views */,
+				AC2188CE27F9F3C000545EC9 /* Model */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -138,6 +131,29 @@
 				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AC2188CE27F9F3C000545EC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC2188CF27F9F3CC00545EC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE61B427F8EC17009EE2C8 /* uploaddocument sunview.swift */,
+				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
+				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
+				ACFE61B027F8EC17009EE2C8 /* DatosViewController.swift */,
+				ACFA967827F9250700323A37 /* FormViewController.swift */,
+				ACFA967A27F9250700323A37 /* CountryViewController.swift */,
+				ACFE61B127F8EC17009EE2C8 /* PasswordCreationView.swift */,
+				ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */,
+				ACFE61B227F8EC17009EE2C8 /* ThankYouViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ACFA968027F9274B00323A37 /* Modules */ = {

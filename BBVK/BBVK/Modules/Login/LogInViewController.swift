@@ -78,12 +78,9 @@ class LogInViewController: UIViewController {
 }
     
     @objc func clickLogIn(){
-         print("Vamos por el menu!")
-          let bienvenidaViewController = BienvenidaViewController()
-        bienvenidaViewController.modalPresentationStyle = .fullScreen
-        present(bienvenidaViewController, animated: true, completion: {
-            print("Ya se termino de presentar :)")
-        })
+       let homeVC = HomeViewController()
+      homeVC.modalPresentationStyle = .fullScreen
+      present(homeVC, animated: true, completion: nil)
       }
    
    @objc func clickreturn() {
