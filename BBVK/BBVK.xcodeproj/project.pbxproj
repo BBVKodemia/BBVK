@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2188CD27F9E58700545EC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188CC27F9E58700545EC9 /* HomeViewController.swift */; };
 		ACFA967727F922D800323A37 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA967627F922D800323A37 /* LogInViewController.swift */; };
 		ACFA967B27F9250700323A37 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA967827F9250700323A37 /* FormViewController.swift */; };
 		ACFA967C27F9250700323A37 /* CodeTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA967927F9250700323A37 /* CodeTableVewCell.swift */; };
@@ -34,7 +35,6 @@
 		ACFE61C727F8EC17009EE2C8 /* TelefonoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B727F8EC17009EE2C8 /* TelefonoViewController.swift */; };
 		ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */; };
 		ACFE61C927F8EC17009EE2C8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */; };
-		ACFE61CA27F8EC17009EE2C8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61BA27F8EC17009EE2C8 /* SignInViewController.swift */; };
 		ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC2188CC27F9E58700545EC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACFA967627F922D800323A37 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		ACFA967827F9250700323A37 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		ACFA967927F9250700323A37 /* CodeTableVewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTableVewCell.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		ACFE61B727F8EC17009EE2C8 /* TelefonoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoginViewController.swift; sourceTree = "<group>"; };
 		ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		ACFE61BA27F8EC17009EE2C8 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +116,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC2188CA27F973B900545EC9 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				AC2188CF27F9F3CC00545EC9 /* Views */,
+				AC2188CE27F9F3C000545EC9 /* Model */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		AC2188CB27F9E56700545EC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AC2188CE27F9F3C000545EC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC2188CF27F9F3CC00545EC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE61B427F8EC17009EE2C8 /* uploaddocument sunview.swift */,
+				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
+				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
+				ACFE61B027F8EC17009EE2C8 /* DatosViewController.swift */,
+				ACFA967827F9250700323A37 /* FormViewController.swift */,
+				ACFA967A27F9250700323A37 /* CountryViewController.swift */,
+				ACFE61B127F8EC17009EE2C8 /* PasswordCreationView.swift */,
+				ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */,
+				ACFE61B227F8EC17009EE2C8 /* ThankYouViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACFA968027F9274B00323A37 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AC2188CB27F9E56700545EC9 /* Home */,
+				AC2188CA27F973B900545EC9 /* Register */,
+				ACFA968127F9275700323A37 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		ACFA968127F9275700323A37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE61AF27F8EC17009EE2C8 /* ViewController.swift */,
+				ACFA967627F922D800323A37 /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		ACFE616E27F8EA11009EE2C8 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +198,7 @@
 		ACFE617927F8EA11009EE2C8 /* BBVK */ = {
 			isa = PBXGroup;
 			children = (
+				ACFA968027F9274B00323A37 /* Modules */,
 				ACFE61AA27F8EC17009EE2C8 /* Utilities */,
 				ACFE61AE27F8EC17009EE2C8 /* Views */,
 				ACFE617A27F8EA11009EE2C8 /* AppDelegate.swift */,
@@ -183,22 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				ACFA967927F9250700323A37 /* CodeTableVewCell.swift */,
-				ACFA967A27F9250700323A37 /* CountryViewController.swift */,
-				ACFA967827F9250700323A37 /* FormViewController.swift */,
-				ACFA967627F922D800323A37 /* LogInViewController.swift */,
-				ACFE61AF27F8EC17009EE2C8 /* ViewController.swift */,
-				ACFE61B027F8EC17009EE2C8 /* DatosViewController.swift */,
-				ACFE61B127F8EC17009EE2C8 /* PasswordCreationView.swift */,
-				ACFE61B227F8EC17009EE2C8 /* ThankYouViewController.swift */,
 				ACFE61B327F8EC17009EE2C8 /* BienvenidaViewController.swift */,
-				ACFE61B427F8EC17009EE2C8 /* uploaddocument sunview.swift */,
 				ACFE61B527F8EC17009EE2C8 /* ContrasenaViewController.swift */,
-				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
 				ACFE61B727F8EC17009EE2C8 /* TelefonoViewController.swift */,
 				ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */,
-				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
-				ACFE61BA27F8EC17009EE2C8 /* SignInViewController.swift */,
-				ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,10 +388,10 @@
 				ACFE61C627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift in Sources */,
 				ACFE61C927F8EC17009EE2C8 /* CreateAccountViewController.swift in Sources */,
 				ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */,
+				AC2188CD27F9E58700545EC9 /* HomeViewController.swift in Sources */,
 				ACFA967F27F9251100323A37 /* DictionaryCodes.swift in Sources */,
 				ACFE61C527F8EC17009EE2C8 /* ContrasenaViewController.swift in Sources */,
 				ACFE61C427F8EC17009EE2C8 /* uploaddocument sunview.swift in Sources */,
-				ACFE61CA27F8EC17009EE2C8 /* SignInViewController.swift in Sources */,
 				ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */,
 				ACFE61BF27F8EC17009EE2C8 /* ViewController.swift in Sources */,
 				ACFA967C27F9250700323A37 /* CodeTableVewCell.swift in Sources */,

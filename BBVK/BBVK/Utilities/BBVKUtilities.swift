@@ -8,6 +8,8 @@ class initializerUI{
     var uiImage: UIImageView?
     var uiLabel: UILabel?
     var uiButton: UIButton?
+    var profileButton: UIButton?
+    var questionButton: UIButton?
     var uiView: UIView?
     var alert: UIAlertController?
     
@@ -96,7 +98,7 @@ class initializerUI{
       uiButton?.layer.cornerRadius = 5
       uiButton?.titleLabel?.font = constants.normalFont
       uiButton?.setTitle(buttonText, for: .normal)
-
+      uiButton?.setTitleColor(.black, for: .normal)
         
         if ispurple == true {
            uiButton?.backgroundColor = .clear
@@ -135,10 +137,42 @@ class initializerUI{
       headerImage?.addAnchorsAndSize(width: 70, height: 40, left: (constants.width/2)-35, top: 40, right: nil, bottom: nil)
    }
    
+   func HomeViewController(viewControllerParam: UIView) {
+      let headerImage: UIImageView?
+      viewControllerParam.backgroundColor = constants.whiteBackground
+      //MARK: Header
+      headerImage = uiImageViewSetter(uiImageName: "headerimage")
+      viewControllerParam.addSubview(headerImage!)
+      headerImage?.addAnchorsAndSize(width: 70, height: 40, left: (constants.width/2)-35, top: 55, right: nil, bottom: nil)
+      
+      
+      profileButton = UIButton()
+      let profileIcon = UIImage(systemName: "person.crop.circle")
+      profileButton?.setImage(profileIcon, for: .normal)
+      profileButton?.backgroundColor = .clear
+      profileButton?.tintColor = .black
+      profileButton?.contentHorizontalAlignment = .fill
+      profileButton?.contentVerticalAlignment = .fill
+      
+      viewControllerParam.addSubview(profileButton!)
+      profileButton?.addAnchorsAndSize(width: 35, height: 35, left: 30, top: 55, right: nil, bottom: nil)
+      
+      
+      questionButton = UIButton()
+      questionButton?.setImage(UIImage(systemName: "questionmark.circle"), for: .normal)
+      questionButton?.backgroundColor = .clear
+      questionButton?.tintColor = .black
+      questionButton?.contentHorizontalAlignment = .fill
+      questionButton?.contentVerticalAlignment = .fill
+      
+      viewControllerParam.addSubview(questionButton!)
+      questionButton?.addAnchorsAndSize(width: 35, height: 35, left: nil, top: 55, right: 30, bottom: nil)
+   }
+   
    func ArrowButton(arrowBttnTxt: String) -> UIButton {
       
       uiButton = UIButton()
-      uiButton?.setImage(UIImage(named: "backArrow"), for: .normal)
+      uiButton?.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
       uiButton?.titleLabel?.font = UIFont(name: "Poppins", size: 20)
       uiButton?.backgroundColor = .clear
       uiButton?.setTitle("  \(arrowBttnTxt)", for: .normal)
