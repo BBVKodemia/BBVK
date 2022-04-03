@@ -96,7 +96,7 @@ class initializerUI{
       uiButton?.layer.cornerRadius = 5
       uiButton?.titleLabel?.font = constants.normalFont
       uiButton?.setTitle(buttonText, for: .normal)
-
+      uiButton?.setTitleColor(.black, for: .normal)
         
         if ispurple == true {
            uiButton?.backgroundColor = .clear
@@ -135,10 +135,23 @@ class initializerUI{
       headerImage?.addAnchorsAndSize(width: 70, height: 40, left: (constants.width/2)-35, top: 40, right: nil, bottom: nil)
    }
    
+   func HomeViewController(viewControllerParam: UIView) {
+      let headerImage: UIImageView?
+      viewControllerParam.backgroundColor = constants.whiteBackground
+      //MARK: Header
+      headerImage = uiImageViewSetter(uiImageName: "headerimage")
+      viewControllerParam.addSubview(headerImage!)
+      headerImage?.addAnchorsAndSize(width: 70, height: 40, left: (constants.width/2)-35, top: 40, right: nil, bottom: nil)
+      
+      
+      uiButton = UIButton()
+      uiButton?.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+   }
+   
    func ArrowButton(arrowBttnTxt: String) -> UIButton {
       
       uiButton = UIButton()
-      uiButton?.setImage(UIImage(named: "backArrow"), for: .normal)
+      uiButton?.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
       uiButton?.titleLabel?.font = UIFont(name: "Poppins", size: 20)
       uiButton?.backgroundColor = .clear
       uiButton?.setTitle("  \(arrowBttnTxt)", for: .normal)

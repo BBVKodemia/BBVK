@@ -113,6 +113,9 @@ class CountryViewController: UIViewController {
     }
     
     @objc func continueFlow() {
+       let verificacionVC = verificacionIdentidadWelcome()
+       verificacionVC.modalPresentationStyle = .fullScreen
+       present(verificacionVC, animated: true, completion: nil)
         
     }
 }

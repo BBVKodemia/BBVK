@@ -49,10 +49,11 @@ class ViewController: UIViewController {
         let accountCreateButton = utilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Crear Cuenta")
         view.addSubview(accountCreateButton)
         accountCreateButton.addAnchorsAndSize(width: 60, height: 40, left: 20, top: nil, right: 20, bottom: 120, withAnchor: .top, relativeToView: nil)
+       accountCreateButton.addTarget(self, action: #selector(goCreateAccount), for: .touchUpInside)
         
         
         let loginButton = utilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Iniciar Sesion")
-        loginButton.addTarget(self, action: #selector(goCreateAccount), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(LogInFunciton), for: .touchUpInside)
         view.addSubview(loginButton)
         loginButton.addAnchorsAndSize(width: 80, height: 40, left: 20, top: nil, right: 20, bottom: 50, withAnchor: .top, relativeToView: nil)
         
@@ -68,6 +69,12 @@ class ViewController: UIViewController {
            
         })
       }
+   
+   @objc func LogInFunciton(){
+      let logInButton = LogInViewController()
+      logInButton.modalPresentationStyle = .fullScreen
+      present(logInButton, animated: true, completion: nil)
+     }
 
     
 
