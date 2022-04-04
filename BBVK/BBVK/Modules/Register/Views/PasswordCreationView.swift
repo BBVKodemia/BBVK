@@ -62,10 +62,25 @@ class PasswordViewControllers: UIViewController{
       passwordTextField2.addAnchorsAndSize(width: width/10, height: width/10, left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordLabel2)
       
       
+      let understoodButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Crear Contraseña")
+             view.addSubview(understoodButton)
+             understoodButton.addAnchors(left: 30, top: nil, right: 30, bottom: 35)
+      
+      understoodButton.addTarget(self, action: #selector(sendData), for: .touchUpInside)
       
    
       
    }
    
+   
+}
+
+extension PasswordViewControllers{
+   
+   @objc func sendData(){
+      let sendDataVC = LoadingViewController()
+      sendDataVC.modalPresentationStyle = .fullScreen
+      present(sendDataVC, animated: true, completion: nil)
+   }
    
 }

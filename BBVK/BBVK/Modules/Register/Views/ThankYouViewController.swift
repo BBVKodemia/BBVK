@@ -49,8 +49,7 @@ class ThankYouViewController: UIViewController{
 
 extension ThankYouViewController{
    @objc func DisplayLoadingVC(){
-      self.removeFromParent()
-      
+      self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
    }
    
 }
