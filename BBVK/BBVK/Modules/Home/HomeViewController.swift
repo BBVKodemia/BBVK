@@ -51,14 +51,42 @@ class HomeViewController: UIViewController {
        
        let moneyMovementsTV = UITableView()
        view.addSubview(moneyMovementsTV)
-       moneyMovementsTV.addAnchors(left: 20, top: 30, right: 20, bottom: 100, withAnchor: .top, relativeToView: stackButtons)
+       moneyMovementsTV.addAnchors(left: 20, top: 30, right: 20, bottom: 200, withAnchor: .top, relativeToView: stackButtons)
+       
+       
+       
+       let startButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: true, isgreen: false, buttonText: " Home")
+       startButton.backgroundColor = .black
+       startButton.setImage(UIImage(systemName: "house"), for: .normal)
+       startButton.tintColor = .white
+       let cardButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: " Credit Card")
+       cardButton.backgroundColor = .black
+       cardButton.setImage(UIImage(systemName: "creditcard"), for: .normal)
+       cardButton.tintColor = .white
+       let servicesButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: " Services")
+       servicesButton.backgroundColor = .black
+       servicesButton.setImage(UIImage(systemName: "menubar.arrow.up.rectangle"), for: .normal)
+       servicesButton.tintColor = .white
+       servicesButton.addTarget(self, action: #selector(goToService), for: .touchUpInside)
+
+       let stackFooter = UIStackView(arrangedSubviews: [startButton, cardButton,servicesButton])
+       stackFooter.distribution = .fillEqually
+       stackFooter.spacing = 2
+       stackFooter.translatesAutoresizingMaskIntoConstraints = false
+       stackFooter.backgroundColor = .black
+       view.addSubview(stackFooter)
+       stackFooter.addAnchors(left: 0, top: (constants.height/20)*18.5, right: 0, bottom: 0)
        
        
 
     }
 }
 
-extension CreateAccountViewController{
+extension HomeViewController{
    
-   
+   @objc func goToService(){
+      let detailstransactionVC = TransferMoneyViewController()
+      detailstransactionVC.modalPresentationStyle = .fullScreen
+      present(detailstransactionVC, animated: true, completion: nil)
+   }
 }

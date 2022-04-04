@@ -177,6 +177,7 @@ class initializerUI{
       uiButton?.backgroundColor = .clear
       uiButton?.setTitle("  \(arrowBttnTxt)", for: .normal)
       uiButton?.setTitleColor(constants.grayfont, for: .normal)
+      uiButton?.tintColor = .black
       return uiButton!
    }
    
