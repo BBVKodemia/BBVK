@@ -1,9 +1,4 @@
-//
-//  File.swift
-//  BBVK
-//
-//  Created by Jonathan Avila on 03/04/22.
-//
+
 
 import Foundation
 

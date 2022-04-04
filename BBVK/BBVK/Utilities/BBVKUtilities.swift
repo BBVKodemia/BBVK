@@ -180,7 +180,6 @@ class initializerUI{
       uiButton?.tintColor = .black
       return uiButton!
    }
-   
 
     
 //    func stackViewSetter() ->UIStackView{
