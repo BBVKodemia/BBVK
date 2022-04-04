@@ -11,6 +11,8 @@ class CreateAccountViewController: UIViewController {
     
     let bbvkUtilities = initializerUI()
     let constantes = constants()
+    var userEmail = ""
+   var emailTextfield: UITextField = UITextField()
     
     
    
@@ -18,7 +20,8 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+       view.addGestureRecognizer(tap)
         
         initUI()
     }
@@ -31,6 +34,7 @@ class CreateAccountViewController: UIViewController {
        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "ESCRIBE TU CORREO")
        view.addSubview(arrowButton)
        arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
+       arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
        
        let indicationsLabel = bbvkUtilities.uiLabelSetter(labelString: "Aqui recibiras comprobantes de tus movimientos e informacion sobre tu cuenta", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
        view.addSubview(indicationsLabel)
@@ -43,10 +47,11 @@ class CreateAccountViewController: UIViewController {
                view.addSubview(emailLabel)
                emailLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: indicationsLabel)
                 
-               let emailTextfield = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "  example@bbvk.com", isSecure: false)
-               
-               view.addSubview(emailTextfield)
-               emailTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailLabel)
+                emailTextfield = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "  example@bbvk.com", isSecure: false)
+       emailTextfield.delegate = self
+       view.addSubview(emailTextfield)
+       emailTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailLabel)
+      
        
        let understoodButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Continuar")
               view.addSubview(understoodButton)
@@ -63,6 +68,7 @@ class CreateAccountViewController: UIViewController {
                view.addSubview(avisoButton)
        avisoButton.addAnchors(left: 20, top: nil, right: 20, bottom: 5, withAnchor: .bottom, relativeToView: privacidadButton)
        
+       
 
     }
 }
@@ -70,11 +76,32 @@ class CreateAccountViewController: UIViewController {
 extension CreateAccountViewController{
    
    @objc func goCreateAccount(){
+      let connection = ConnectionManager()
+      connection.postRegister()
+      
        let createAccount = FormViewController()
        createAccount.modalPresentationStyle = .fullScreen
-       present(createAccount, animated: true, completion: {
-          
-       })
+       present(createAccount, animated: true)
      }
    
+   @objc func dismissKeyboard() {
+      view.endEditing(true)
+   }
+   
+   @objc func dismissView() {
+      self.dismiss(animated: true, completion: nil)
+   }
+   
+}
+
+
+extension CreateAccountViewController: UITextFieldDelegate{
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      emailTextfield.endEditing(true)
+      return true
+   }
+   func textFieldDidEndEditing(_ textField: UITextField) {
+      
+   }
 }
