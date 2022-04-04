@@ -29,22 +29,19 @@ class LoadingViewController: UIViewController{
       
       waitingLabel.addAnchors(left: 20, top: 10, right: 20, bottom: nil, withAnchor: .top, relativeToView: loadingLogo)
       
-      // Crear Password button
-      let createPassword = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "next view")
-      view.addSubview(createPassword)
-      createPassword.addAnchorsAndSize(width: nil, height: width/10, left: 20, top: nil, right: 20, bottom: 40)
-      createPassword.addTarget(self, action: #selector(DisplayLoadingVC), for: .touchUpInside)
-      
-      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+         
+         let loadingVC = ThankYouViewController()
+         loadingVC.modalPresentationStyle = .fullScreen
+         self.present(loadingVC, animated: true, completion: nil)
+      }
    }
    
 }
 
 extension LoadingViewController{
    @objc func DisplayLoadingVC(){
-      let loadingVC = ThankYouViewController()
-      loadingVC.modalPresentationStyle = .fullScreen
-      self.present(loadingVC, animated: true, completion: nil)
+     
       
    }
    
