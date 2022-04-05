@@ -53,9 +53,9 @@ class AddFinalViewController: UIViewController {
       
         
         
-        let next = SignInViewController()
-        next.modalPresentationStyle = .fullScreen
-        present(next, animated: true, completion: nil)
+//        let next = SignInViewController()
+//        next.modalPresentationStyle = .fullScreen
+//        present(next, animated: true, completion: nil)
    
     }
 

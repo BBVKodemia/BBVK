@@ -47,6 +47,9 @@
 		ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */; };
 		C744CCFC27FBF283001AA609 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CCFB27FBF283001AA609 /* AddCard.swift */; };
 		C744CCFE27FBF358001AA609 /* addFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CCFD27FBF358001AA609 /* addFinal.swift */; };
+		C744CD0227FBF536001AA609 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0127FBF536001AA609 /* ContactsViewController.swift */; };
+		C744CD0427FBF54B001AA609 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0327FBF54B001AA609 /* TransactionsViewController.swift */; };
+		C744CD0627FC076E001AA609 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0527FC076E001AA609 /* DetailTransactionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C744CCFB27FBF283001AA609 /* AddCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCard.swift; path = ../../../../../../../../Downloads/bbvkViews/proyecyoginal/AddCard.swift; sourceTree = "<group>"; };
 		C744CCFD27FBF358001AA609 /* addFinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFinal.swift; sourceTree = "<group>"; };
+		C744CD0127FBF536001AA609 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		C744CD0327FBF54B001AA609 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		C744CD0527FC076E001AA609 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
+				C744CD0527FC076E001AA609 /* DetailTransactionViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -203,6 +210,8 @@
 		ACFA968027F9274B00323A37 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C744CD0027FBF514001AA609 /* Contacts */,
+				C744CCFF27FBF507001AA609 /* Transactions */,
 				AC2188CB27F9E56700545EC9 /* Home */,
 				AC2188CA27F973B900545EC9 /* Register */,
 				ACFA968127F9275700323A37 /* Login */,
@@ -299,6 +308,22 @@
 				AC2188E227FA7D2000545EC9 /* TransactionCompleted.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C744CCFF27FBF507001AA609 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				C744CD0327FBF54B001AA609 /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		C744CD0027FBF514001AA609 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				C744CD0127FBF536001AA609 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +459,7 @@
 			files = (
 				ACFE61C227F8EC17009EE2C8 /* ThankYouViewController.swift in Sources */,
 				ACFE61C127F8EC17009EE2C8 /* PasswordCreationView.swift in Sources */,
+				C744CD0427FBF54B001AA609 /* TransactionsViewController.swift in Sources */,
 				ACFE61C727F8EC17009EE2C8 /* TelefonoViewController.swift in Sources */,
 				AC2188DD27FA751500545EC9 /* SendMoney.swift in Sources */,
 				ACFE61C627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift in Sources */,
@@ -452,6 +478,7 @@
 				AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */,
 				ACFE61C327F8EC17009EE2C8 /* BienvenidaViewController.swift in Sources */,
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
+				C744CD0627FC076E001AA609 /* DetailTransactionViewController.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
 				ACFE61BC27F8EC17009EE2C8 /* constants.swift in Sources */,
 				AC2188DB27FA6E6A00545EC9 /* TransactionDetailsViewController.swift in Sources */,
@@ -461,6 +488,7 @@
 				C744CCFE27FBF358001AA609 /* addFinal.swift in Sources */,
 				ACFA967B27F9250700323A37 /* FormViewController.swift in Sources */,
 				AC2188D727F9FAC400545EC9 /* UserModel.swift in Sources */,
+				C744CD0227FBF536001AA609 /* ContactsViewController.swift in Sources */,
 				C744CCFC27FBF283001AA609 /* AddCard.swift in Sources */,
 				AC2188D327F9F6FB00545EC9 /* EndPoints.swift in Sources */,
 				AC2188E127FA7CDF00545EC9 /* LoadingProcessingViewController.swift in Sources */,
