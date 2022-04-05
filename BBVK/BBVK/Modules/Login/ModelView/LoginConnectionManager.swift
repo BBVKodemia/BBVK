@@ -10,6 +10,8 @@ import UIKit
 
 struct LoginConnectionManager{
     let loginManager = LoginManager()
+    let defaults = UserDefaults.standard
+    
     private func createRequest(url: URL,
                                httpMethod: String,
                                body: Data? = nil) -> URLRequest {
@@ -46,6 +48,7 @@ struct LoginConnectionManager{
                       }
                 loginManager.setUserDefaultToken(token: token)
                 completion(token)
+
             } catch let error {
                 print(error)
             }

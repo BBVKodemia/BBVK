@@ -12,6 +12,7 @@ class LoadingViewController: UIViewController{
    let bbvkUtilities = initializerUI()
     var registerManager : RegisterManager?
     var conectionManager = ConnectionManager()
+    let defaults = UserDefaults.standard
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -32,11 +33,11 @@ class LoadingViewController: UIViewController{
       
       waitingLabel.addAnchors(left: 20, top: 10, right: 20, bottom: nil, withAnchor: .top, relativeToView: loadingLogo)
        conectionManager.userModelInfo = registerManager?.userModel
-       let responseString = self.conectionManager.postRegister()
+       conectionManager.postRegister()
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-          
-          if responseString.contains("success"){
+          let responseString = self.defaults.string(forKey: "dataString")
+          if responseString!.contains("success"){
          let loadingVC = ThankYouViewController()
          loadingVC.modalPresentationStyle = .fullScreen
          self.present(loadingVC, animated: true, completion: nil)

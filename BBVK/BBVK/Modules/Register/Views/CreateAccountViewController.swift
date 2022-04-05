@@ -38,7 +38,7 @@ class CreateAccountViewController: UIViewController {
        arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
        arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
        
-       let indicationsLabel = bbvkUtilities.uiLabelSetter(labelString: "You will receive emails with your transactions and movements for every event", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
+       let indicationsLabel = bbvkUtilities.uiLabelSetter(labelString: "You will receive emails with your transactions and movements for every event", labelSize: 18, textaligment: .center, isBold: false, isHighLighted: false)
        view.addSubview(indicationsLabel)
        indicationsLabel.numberOfLines = 0
        indicationsLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
@@ -68,6 +68,7 @@ class CreateAccountViewController: UIViewController {
        
        let avisoButton = bbvkUtilities.uiLabelSetter(labelString: "Upon clicking the button you are accepting our terms of service", labelSize: 14 ,textaligment:.center, isBold: true, isHighLighted: false)
                view.addSubview(avisoButton)
+        avisoButton.numberOfLines = 0
        avisoButton.addAnchors(left: 20, top: nil, right: 20, bottom: 5, withAnchor: .bottom, relativeToView: privacidadButton)
        
        

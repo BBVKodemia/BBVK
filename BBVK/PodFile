@@ -1,0 +1,17 @@
+
+platform :ios, '13.0'
+
+target 'BBVK' do
+  use_frameworks!
+
+  # Pods for BBVK Proyect
+  
+  pod 'IQKeyboardManager'
+  
+  inhibit_all_warnings!
+  
+  pod 'KeychainAccess'
+
+end
+
+
