@@ -45,6 +45,7 @@
 		ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */; };
 		ACFE61C927F8EC17009EE2C8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */; };
 		ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */; };
+		C744CCFC27FBF283001AA609 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CCFB27FBF283001AA609 /* AddCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoginViewController.swift; sourceTree = "<group>"; };
 		ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C744CCFB27FBF283001AA609 /* AddCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCard.swift; path = ../../../../../../../../Downloads/bbvkViews/proyecyoginal/AddCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFE61B427F8EC17009EE2C8 /* uploaddocumentsunview.swift */,
+				C744CCFB27FBF283001AA609 /* AddCard.swift */,
 				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
 				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
 				ACFE61B027F8EC17009EE2C8 /* DatosViewController.swift */,
@@ -454,6 +457,7 @@
 				ACFA967727F922D800323A37 /* LogInViewController.swift in Sources */,
 				ACFA967B27F9250700323A37 /* FormViewController.swift in Sources */,
 				AC2188D727F9FAC400545EC9 /* UserModel.swift in Sources */,
+				C744CCFC27FBF283001AA609 /* AddCard.swift in Sources */,
 				AC2188D327F9F6FB00545EC9 /* EndPoints.swift in Sources */,
 				AC2188E127FA7CDF00545EC9 /* LoadingProcessingViewController.swift in Sources */,
 				ACFE61BD27F8EC17009EE2C8 /* BBVKUtilities.swift in Sources */,

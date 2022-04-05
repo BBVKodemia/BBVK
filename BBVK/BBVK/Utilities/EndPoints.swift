@@ -13,5 +13,4 @@ struct BBVKEndPoints {
    static let registerEndPoint = "https://bankodemia.kodemia.mx/users"
    
    
-   
 }

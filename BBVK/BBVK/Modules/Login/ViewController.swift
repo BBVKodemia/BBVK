@@ -11,9 +11,6 @@ class ViewController: UIViewController {
     let utilities = initializerUI()
     let constantes = constants()
     
-   
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
