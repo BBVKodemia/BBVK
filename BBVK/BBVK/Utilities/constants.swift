@@ -14,6 +14,7 @@ class constants{
    static let textColorHighligthed = UIColor(displayP3Red: 50/255, green: 160/255, blue: 168/255, alpha: 1)
    
    static let viewBackGroundColor = UIColor(displayP3Red: 89/255, green: 194/255, blue: 230/255, alpha: 1)
+    static let vieBlackColor = UIColor(displayP3Red: 20/255, green: 20/255,blue: 20/255, alpha: 1)
    
    static let whiteBackground = UIColor(ciColor: .white)
    

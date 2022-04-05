@@ -15,6 +15,8 @@ class FormViewController: UIViewController {
     let datePicker = UIDatePicker()
     let datePickerView = UIView()
     let continueButton = UIButton()
+    let bbvkUtilities = initializerUI()
+    var registerManager: RegisterManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +25,20 @@ class FormViewController: UIViewController {
     }
     
     private func setupView() {
+        bbvkUtilities.MainViewController(viewControllerParam: view)
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Email Validation")
+        view.addSubview(arrowButton)
+        arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
+        arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        
+        let instructionsLabel = bbvkUtilities.uiLabelSetter(labelString: "Please fill below form with your information", labelSize: 18, textaligment: .center, isBold: false, isHighLighted: false)
+        view.addSubview(instructionsLabel)
+        instructionsLabel.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
+        
         view.backgroundColor = UIColor.systemBackground
         view.addSubview(nameTextField)
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                   constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                   constant: -20),
-            nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                   constant: 80),
-            nameTextField.heightAnchor.constraint(equalToConstant: 44)
-        ])
-        nameTextField.placeholder = "Nombre"
+        nameTextField.addAnchors(left: 20, top: 40, right: 20, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel)
+        nameTextField.placeholder = "Name"
         nameTextField.borderStyle = .roundedRect
         
         view.addSubview(lastNameTextField)
@@ -49,7 +52,7 @@ class FormViewController: UIViewController {
                                                    constant: 20),
             lastNameTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
-        lastNameTextField.placeholder = "Apellidos"
+        lastNameTextField.placeholder = "LastName"
         lastNameTextField.borderStyle = .roundedRect
         
         view.addSubview(jobTextField)
@@ -63,7 +66,7 @@ class FormViewController: UIViewController {
                                               constant: 20),
             jobTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
-        jobTextField.placeholder = "Ocupacion"
+        jobTextField.placeholder = "Occupation"
         jobTextField.borderStyle = .roundedRect
         
         view.addSubview(dateTextField)
@@ -77,7 +80,7 @@ class FormViewController: UIViewController {
                                               constant: 20),
             dateTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
-        dateTextField.placeholder = "Fecha de nacimiento"
+        dateTextField.placeholder = "BirthDate"
         dateTextField.borderStyle = .roundedRect
         
         view.addSubview(continueButton)
@@ -90,12 +93,12 @@ class FormViewController: UIViewController {
             continueButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        continueButton.backgroundColor = .red
+        continueButton.backgroundColor = constants.backgroundButtoncolorGreen
         continueButton.clipsToBounds = true
         continueButton.layer.masksToBounds = true
         continueButton.layer.cornerRadius = 8
         continueButton.setTitleColor(.white, for: .normal)
-        continueButton.setTitle("Continuar", for: .normal)
+        continueButton.setTitle("Continue", for: .normal)
         continueButton.addTarget(self,
                                action: #selector(continueFlow),
                                for: .touchUpInside)
@@ -108,9 +111,17 @@ class FormViewController: UIViewController {
     }
     
     @objc func continueFlow() {
+        let validation = registerManager!.validatingData(name: nameTextField.text!, lastName: lastNameTextField.text!, occuppation: jobTextField.text!, birthDate: datePicker.date)
+        if validation == true {
         let vc = CountryViewController()
+            vc.registerManager = self.registerManager
+            print(registerManager?.userModel.userEmail ?? "")
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+            self.present(vc, animated: true)}
+        else {
+            let alert = bbvkUtilities.alertViewSetter(tittle: "Some fields are empty", message: "Please fill all the fields in order to proceed", buttontittle: "ok")
+                     self.present(alert, animated: true, completion: nil)
+        }
     }
     
     private func setupDatePicker() {
@@ -165,7 +176,7 @@ class FormViewController: UIViewController {
             acceptButton.bottomAnchor.constraint(equalTo: backgroundDatePicker.bottomAnchor,
                                                  constant: -10)
         ])
-        acceptButton.backgroundColor = .red
+        acceptButton.backgroundColor = constants.backgroundButtoncolorGreen
         acceptButton.clipsToBounds = true
         acceptButton.layer.masksToBounds = true
         acceptButton.layer.cornerRadius = 8
@@ -195,7 +206,7 @@ class FormViewController: UIViewController {
     
     @objc func donedatePicker(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-MM-dd"
         dateTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
         datePickerView.isHidden = true
@@ -205,7 +216,12 @@ class FormViewController: UIViewController {
         self.view.endEditing(true)
         datePickerView.isHidden = true
     }
+    
+    @objc func dismissView() {
+       self.dismiss(animated: true, completion: nil)
+    }
 }
+
 
 
 extension FormViewController: UITextFieldDelegate {
