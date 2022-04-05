@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A42881674F6CEDEB209923B /* Pods_BBVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */; };
 		AC2188CD27F9E58700545EC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188CC27F9E58700545EC9 /* HomeViewController.swift */; };
 		AC2188D327F9F6FB00545EC9 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188D227F9F6FB00545EC9 /* EndPoints.swift */; };
 		AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188D427F9F80400545EC9 /* ConectionManager.swift */; };
@@ -57,6 +58,9 @@
 		F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0927FC022100A4FCC9 /* responseData.swift */; };
 		F6061D0C27FC04A900A4FCC9 /* respondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */; };
 		F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0D27FC735200A4FCC9 /* CardView.swift */; };
+		F6061D5027FCB53800A4FCC9 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */; };
+		F6061D5127FCB53800A4FCC9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */; };
+		F6061D5327FCB55C00A4FCC9 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2188CC27F9E58700545EC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC2188D227F9F6FB00545EC9 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		AC2188D427F9F80400545EC9 /* ConectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectionManager.swift; sourceTree = "<group>"; };
@@ -116,12 +121,7 @@
 		ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoginViewController.swift; sourceTree = "<group>"; };
 		ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		C7FCD47A27FCBACC000A4CEC /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
-		C7FCD47D27FCBB2C000A4CEC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		C7FCD47E27FCBB2C000A4CEC /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
-		C7FCD48227FCBB3C000A4CEC /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
-		C7FCD48427FCCD14000A4CEC /* addFinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFinal.swift; sourceTree = "<group>"; };
-		C7FCD48627FCCD49000A4CEC /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBVK.release.xcconfig"; path = "Target Support Files/Pods-BBVK/Pods-BBVK.release.xcconfig"; sourceTree = "<group>"; };
 		F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteManager.swift; sourceTree = "<group>"; };
 		F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +131,10 @@
 		F6061D0927FC022100A4FCC9 /* responseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseData.swift; sourceTree = "<group>"; };
 		F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondeModel.swift; sourceTree = "<group>"; };
 		F6061D0D27FC735200A4FCC9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
+		FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBVK.debug.xcconfig"; path = "Target Support Files/Pods-BBVK/Pods-BBVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A42881674F6CEDEB209923B /* Pods_BBVK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04F4BB15A94720A42E362663 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */,
+				C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC2188CA27F973B900545EC9 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +185,7 @@
 		AC2188CB27F9E56700545EC9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */,
 				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
 				C7FCD47A27FCBACC000A4CEC /* DetailTransactionViewController.swift */,
 			);
@@ -215,8 +230,8 @@
 		ACFA968027F9274B00323A37 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C7FCD48127FCBB3C000A4CEC /* Transactions */,
-				C7FCD47C27FCBB2C000A4CEC /* Contacts */,
+				F6061D4E27FCB53800A4FCC9 /* Contacts */,
+				F6061D4C27FCB53800A4FCC9 /* Transactions */,
 				F6061CFA27FB98DE00A4FCC9 /* Login */,
 				AC2188CB27F9E56700545EC9 /* Home */,
 				AC2188CA27F973B900545EC9 /* Register */,
@@ -231,6 +246,8 @@
 				ACFE619027F8EA13009EE2C8 /* BBVKTests */,
 				ACFE619A27F8EA13009EE2C8 /* BBVKUITests */,
 				ACFE617827F8EA11009EE2C8 /* Products */,
+				04F4BB15A94720A42E362663 /* Pods */,
+				E4B7E37D214D9A6CFF9FD2CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,31 +324,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C7FCD47C27FCBB2C000A4CEC /* Contacts */ = {
+		E4B7E37D214D9A6CFF9FD2CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7FCD48427FCCD14000A4CEC /* addFinal.swift */,
-				C7FCD47D27FCBB2C000A4CEC /* ContactsViewController.swift */,
-				C7FCD47E27FCBB2C000A4CEC /* NewContactViewController.swift */,
+				8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */,
 			);
-			path = Contacts;
-			sourceTree = "<group>";
-		};
-		C7FCD48127FCBB3C000A4CEC /* Transactions */ = {
-			isa = PBXGroup;
-			children = (
-				C7FCD48227FCBB3C000A4CEC /* TransactionsViewController.swift */,
-			);
-			path = Transactions;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F6061CFA27FB98DE00A4FCC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D0F27FCAE5900A4FCC9 /* View */,
 				F6061D0227FBFCC000A4FCC9 /* Model */,
 				F6061CFF27FBFC4B00A4FCC9 /* ModelView */,
-				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
-				F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -355,6 +361,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F6061D0F27FCAE5900A4FCC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */,
+				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6061D4C27FCB53800A4FCC9 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		F6061D4E27FCB53800A4FCC9 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,9 +393,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACFE61A127F8EA13009EE2C8 /* Build configuration list for PBXNativeTarget "BBVK" */;
 			buildPhases = (
+				A84B2991291BC76139E74B34 /* [CP] Check Pods Manifest.lock */,
 				ACFE617327F8EA11009EE2C8 /* Sources */,
 				ACFE617427F8EA11009EE2C8 /* Frameworks */,
 				ACFE617527F8EA11009EE2C8 /* Resources */,
+				7009CE0CC3065AAD648E3C70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,6 +514,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7009CE0CC3065AAD648E3C70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A84B2991291BC76139E74B34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BBVK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACFE617327F8EA11009EE2C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -491,6 +566,7 @@
 				ACFE61C127F8EC17009EE2C8 /* PasswordCreationView.swift in Sources */,
 				ACFE61C727F8EC17009EE2C8 /* TelefonoViewController.swift in Sources */,
 				F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */,
+				F6061D5027FCB53800A4FCC9 /* TransactionsViewController.swift in Sources */,
 				AC2188DD27FA751500545EC9 /* SendMoney.swift in Sources */,
 				ACFE61C627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift in Sources */,
 				F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */,
@@ -517,6 +593,7 @@
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
 				ACFE61BC27F8EC17009EE2C8 /* constants.swift in Sources */,
+				F6061D5127FCB53800A4FCC9 /* ContactsViewController.swift in Sources */,
 				AC2188DB27FA6E6A00545EC9 /* TransactionDetailsViewController.swift in Sources */,
 				C7FCD47F27FCBB2C000A4CEC /* ContactsViewController.swift in Sources */,
 				F6061CF527FB8F3100A4FCC9 /* RegisteManager.swift in Sources */,
@@ -530,6 +607,7 @@
 				ACFE61BD27F8EC17009EE2C8 /* BBVKUtilities.swift in Sources */,
 				C7FCD48727FCCD49000A4CEC /* ServicesViewController.swift in Sources */,
 				AC2188D927FA2D2800545EC9 /* UserModelData.swift in Sources */,
+				F6061D5327FCB55C00A4FCC9 /* DetailTransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +781,7 @@
 		};
 		ACFE61A227F8EA13009EE2C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -732,6 +811,7 @@
 		};
 		ACFE61A327F8EA13009EE2C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

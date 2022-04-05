@@ -16,8 +16,8 @@ class LogInViewController: UIViewController {
     var passwordTextfield = UITextField()
     var token2 = ""
     var loginManager = LoginManager()
-    
     var signInButton : UIButton?
+    let defaults = UserDefaults.standard
     
 
     override func viewDidLoad() {
@@ -41,13 +41,13 @@ class LogInViewController: UIViewController {
 //        view.addSubview(signInLabel)
 //        signInLabel.addAnchorsAndSize(width: nil, height: 50, left: 20, top: 70, right: 20, bottom: nil, withAnchor: nil, relativeToView: nil)
         
-        let solicitudDatosLabel = utilities.uiLabelSetter(labelString: "Escribe el correo y telefono con el que te registraste, a través de estos te enviaremos el acceso", labelSize: 16 ,textaligment:.left, isBold: true, isHighLighted: false)
+        let solicitudDatosLabel = utilities.uiLabelSetter(labelString: "Please Write your e-mail and password for LogIn to acess your acount", labelSize: 16 ,textaligment:.left, isBold: true, isHighLighted: false)
         solicitudDatosLabel.numberOfLines = 3
         view.addSubview(solicitudDatosLabel)
         solicitudDatosLabel.addAnchorsAndSize(width: nil, height: 80, left: 20, top: 120, right: 20, bottom: nil, withAnchor: nil, relativeToView: arrowButton)
         
         
-        let emailLabel = utilities.uiLabelSetter(labelString: "Escribe tu correo", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
+        let emailLabel = utilities.uiLabelSetter(labelString: "E-mail", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
         view.addSubview(emailLabel)
         emailLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: solicitudDatosLabel)
          
@@ -56,7 +56,7 @@ class LogInViewController: UIViewController {
         view.addSubview(emailTextfield)
         emailTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailLabel)
         
-         let passwordLabel = utilities.uiLabelSetter(labelString: "Escribe tu contraseña", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
+         let passwordLabel = utilities.uiLabelSetter(labelString: "Password", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
         view.addSubview(passwordLabel)
         passwordLabel.addAnchors(left: 20, top: 15, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailTextfield)
         
@@ -65,7 +65,7 @@ class LogInViewController: UIViewController {
         view.addSubview(passwordTextfield)
         passwordTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordLabel)
         
-        let helpLabel = utilities.uiLabelSetter(labelString: "¿Necesitas ayuda? Escribenos a ", labelSize: 14, textaligment: .center, isBold: false, isHighLighted: false)
+        let helpLabel = utilities.uiLabelSetter(labelString: "¿Do you need help? write us at ", labelSize: 14, textaligment: .center, isBold: false, isHighLighted: false)
         view.addSubview(helpLabel)
         helpLabel.addAnchorsAndSize(width: nil, height: 20, left: 20, top: nil, right: 20, bottom: 120, withAnchor: .top, relativeToView: passwordTextfield)
        
@@ -74,7 +74,7 @@ class LogInViewController: UIViewController {
         bankodemiaLabel.addAnchorsAndSize(width: nil, height: 20, left: 20, top: nil, right: 20, bottom: 100, withAnchor: .top, relativeToView: helpLabel)
         
                
-        let miboton = utilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Iniciar Sesion")
+        let miboton = utilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Log In")
 
         miboton.addTarget(self, action: #selector(clickLogIn), for: .touchUpInside)
         view.addSubview(miboton)
@@ -84,21 +84,29 @@ class LogInViewController: UIViewController {
 }
     
     @objc func clickLogIn(){
-       let homeVC = HomeViewController()
 
+        if loginManager.validatingLogin(password: passwordTextfield.text!, userName: emailTextfield.text!) != true {
+            let alert = utilities.alertViewSetter(tittle: "Email or password empty", message: "Please fill email and password before continue", buttontittle: "ok")
+            self.present(alert, animated: true, completion: nil)
+        } else {
+        
         loginConnectionManager.login(email: emailTextfield.text!, password: passwordTextfield.text!) { token in
             guard let token = token else {
                 return
             }
-            print("Token: \(token)")
-            self.token2 = token
+            self.defaults.set(token, forKey: "LoginToken")
+        }
         }
         loginManager.setTandomCardGeneratons()
         
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+        print(defaults.string(forKey: "LoginToken"))
+//    if loginManager.getUserDefaultToken().contains("token")
+      let homeVC = HomeViewController()
       homeVC.modalPresentationStyle = .fullScreen
       present(homeVC, animated: true, completion: nil)
       }
+    }
    
    @objc func clickreturn() {
        
