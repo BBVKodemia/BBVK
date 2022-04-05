@@ -73,8 +73,8 @@ extension verificacionIdentidadWelcome {
     }
     
     @objc func docMicBtnclick() {
-        registerManager!.userModel.useridentityImageType = "Immigrant Document"
-        let docMicBtnclickVc = UploadDocumentViewController(arrowBttntct: "MIGRATION_FORM")
+        registerManager!.userModel.useridentityImageType = "MIGRATION_FORM"
+        let docMicBtnclickVc = UploadDocumentViewController(arrowBttntct: "Immigrant Document")
         docMicBtnclickVc.registerManager = self.registerManager
         docMicBtnclickVc.modalPresentationStyle = .fullScreen
         self.present(docMicBtnclickVc, animated: true, completion: nil)
@@ -82,8 +82,8 @@ extension verificacionIdentidadWelcome {
     }
     
     @objc func passportBtnclick() {
-        registerManager!.userModel.useridentityImageType = "Passport"
-        let passportBtnclickVc = UploadDocumentViewController(arrowBttntct: "PASSPORT")
+        registerManager!.userModel.useridentityImageType = "PASSPORT"
+        let passportBtnclickVc = UploadDocumentViewController(arrowBttntct: "Passport")
         passportBtnclickVc.registerManager = self.registerManager
         passportBtnclickVc.modalPresentationStyle = .fullScreen
         self.present(passportBtnclickVc, animated: true, completion: nil)

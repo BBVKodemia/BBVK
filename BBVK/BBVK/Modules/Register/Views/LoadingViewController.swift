@@ -32,21 +32,32 @@ class LoadingViewController: UIViewController{
       
       waitingLabel.addAnchors(left: 20, top: 10, right: 20, bottom: nil, withAnchor: .top, relativeToView: loadingLogo)
        conectionManager.userModelInfo = registerManager?.userModel
-       conectionManager.postRegister()
+       let responseString = self.conectionManager.postRegister()
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-         
+      DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+          
+          if responseString.contains("success"){
          let loadingVC = ThankYouViewController()
          loadingVC.modalPresentationStyle = .fullScreen
          self.present(loadingVC, animated: true, completion: nil)
+          }else {
+              let alert = self.bbvkUtilities.alertDismissViewSetter(tittle: "Something went Wrong ", message: "Please try again later")
+              let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                  UIAlertAction in
+                  self.dismissLoadingVC()
+              }
+              alert.addAction(okAction)
+              self.present(alert, animated: true, completion: {})
+
+          }
       }
    }
    
 }
 
 extension LoadingViewController{
-   @objc func DisplayLoadingVC(){
-     
+   @objc func dismissLoadingVC(){
+       self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
       
    }
    

@@ -13,6 +13,7 @@ class RegisterManager{
     lazy var validationEmail: Bool = false
     lazy var imageValidationBool = false
     lazy var validationPassword: Bool = false
+    lazy var validationRegexPassword: Bool = false
     
     func validateEmail(emailText: String) -> Bool{
         
@@ -26,14 +27,19 @@ class RegisterManager{
         return validationEmail
     }
     
-    func validatingData(name: String, lastName: String, occuppation: String, birthDate: String) -> Bool {
-        if name == "" || lastName == "" || occuppation == "" || birthDate == "" {
+    func validatingData(name: String, lastName: String, occuppation: String, birthDate: Date) -> Bool {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let newDate = formatter.string(from: birthDate)
+        print(newDate)
+        
+        if name == "" || lastName == "" || occuppation == ""{
             validationEmail = false
         } else{ validationEmail = true
             userModel.userName = name
             userModel.userLastNAme = lastName
             userModel.occupation = occuppation
-            userModel.userBirthDate = birthDate
+            userModel.userBirthDate = newDate
             print(birthDate)
         }
         return validationEmail
@@ -72,6 +78,16 @@ class RegisterManager{
             userModel.userSpecialWord = password
         }
         return validationPassword
+    }
+    
+    func validatingRegexPassword(password: String, secondPassword: String) -> Bool {
+
+        if secondPassword.isValidPassword() || password.isValidPassword() {
+            validationRegexPassword = true
+        } else {
+            validationRegexPassword = false
+        }
+        return validationRegexPassword
     }
     
 }

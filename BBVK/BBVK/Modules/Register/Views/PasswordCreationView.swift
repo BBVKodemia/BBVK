@@ -21,31 +21,31 @@ class PasswordViewControllers: UIViewController{
    
    func initUi (){
       // Arrow Button
-      let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "CONTRASEÑA")
+      let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Password")
       view.addSubview(arrowButton)
       arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
        arrowButton.addTarget(self, action: #selector(dismissReturn), for: .touchUpInside)
       
-      let welcomeLabel = bbvkUtilities.uiLabelSetter(labelString: "Crea una contraseña segura", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
+      let welcomeLabel = bbvkUtilities.uiLabelSetter(labelString: "Create a secure password", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
       view.addSubview(welcomeLabel)
       welcomeLabel.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
       // instructions
-      let instructionsLabel1 = bbvkUtilities.uiLabelSetter(labelString: "La usaras para entrar a la app y confirmar tus transacciones.", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
+      let instructionsLabel1 = bbvkUtilities.uiLabelSetter(labelString: "You will use it for login into the app and make transactions", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
       instructionsLabel1.numberOfLines = 0
       view.addSubview(instructionsLabel1)
       instructionsLabel1.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: welcomeLabel)
       
-      let instructionsLabel2 = bbvkUtilities.uiLabelSetter(labelString: "usa al menos 6 caracteres alfanumericos, no consecutivos ni repetidos.", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
+      let instructionsLabel2 = bbvkUtilities.uiLabelSetter(labelString: "Please make sure your password contains minimum 8 characters at least 1 Alphabet and 1 Number", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
       instructionsLabel2.numberOfLines = 0
       view.addSubview(instructionsLabel2)
       instructionsLabel2.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel1)
       
       // label for password textfield
-      let passwordLabel = bbvkUtilities.uiLabelSetter(labelString: "Contraseña", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
+      let passwordLabel = bbvkUtilities.uiLabelSetter(labelString: "Password", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
       view.addSubview(passwordLabel)
       passwordLabel.addAnchors(left: 20, top: 40, right: 20, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel2)
       // password textfield
-      passwordTextField =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Contraseña", isSecure: true)
+      passwordTextField =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Password", isSecure: true)
       passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
       passwordTextField.layer.borderWidth = 1
       passwordTextField.layer.cornerRadius = 3
@@ -83,13 +83,17 @@ extension PasswordViewControllers{
    
    @objc func sendData(){
        let validationPassword = registerManager!.validatingPassword(password: passwordTextField.text!, secondPassword: passwordTextField2.text!)
+       let validationRegexPassword = registerManager!.validatingRegexPassword(password: passwordTextField.text!, secondPassword: passwordTextField2.text!)
        print(validationPassword)
-       if validationPassword == true {
+       if validationPassword == true && validationRegexPassword == true {
       let sendDataVC = LoadingViewController()
            sendDataVC.registerManager = self.registerManager
       sendDataVC.modalPresentationStyle = .fullScreen
       present(sendDataVC, animated: true, completion: nil)
-       }else {
+       }else if validationRegexPassword == false  {
+           let alert = bbvkUtilities.alertViewSetter(tittle: "Your password doesnt contains minimum 8 characters at least 1 Alphabet and 1 Number", message: "Please Verify Your Password", buttontittle: "ok")
+           self.present(alert, animated: true, completion: nil)
+       }else if validationPassword == false  {
            let alert = bbvkUtilities.alertViewSetter(tittle: "Your password doesnt match", message: "Please Verify Your Password", buttontittle: "ok")
            self.present(alert, animated: true, completion: nil)
        }
