@@ -103,13 +103,13 @@ class initializerUI{
         if ispurple == true {
            uiButton?.backgroundColor = .clear
            uiButton?.setTitleColor(.white, for: .normal)
-           uiButton?.layer.borderColor = (constants.backgroundButtoncolorpurple as! CGColor)
+            uiButton?.layer.borderColor = constants.backgroundButtoncolorgray.cgColor
         }
         
       if isgreen == true {
          uiButton?.backgroundColor = .clear
          uiButton?.setTitleColor(.white, for: .normal)
-         uiButton?.layer.borderColor = (constants.backgroundButtoncolorGreen as! CGColor)
+          uiButton?.layer.borderColor = constants.backgroundButtoncolorGreen.cgColor
       }
         
         
@@ -180,29 +180,7 @@ class initializerUI{
       uiButton?.tintColor = .black
       return uiButton!
    }
-   
 
-    
-//    func stackViewSetter() ->UIStackView{
-//        let stackView = UIStackView()
-//        stackView.axis  = NSLayoutConstraint.Axis.horizontal
-//        stackView.distribution  = UIStackView.Distribution.equalSpacing
-//        stackView.alignment = UIStackView.Alignment.center
-//        stackView.spacing   = 16.0
-//
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.isLayoutMarginsRelativeArrangement = true
-//        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-//        stackView.layer.cornerRadius = 10
-//        stackView.layer.borderColor = headerInit.backgroundButtoncolor.cgColor
-//        stackView.backgroundColor = headerInit.backgroundButtoncolor
-//
-//
-//
-//        return stackView
-//    }
-   
- 
     
     
     

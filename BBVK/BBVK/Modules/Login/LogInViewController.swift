@@ -11,6 +11,11 @@ class LogInViewController: UIViewController {
     
     let utilities = initializerUI()
     let constantes = constants()
+    var loginConnectionManager = LoginConnectionManager()
+    var emailTextfield = UITextField()
+    var passwordTextfield = UITextField()
+    var token2 = ""
+    var loginManager = LoginManager()
     
     var signInButton : UIButton?
     
@@ -45,16 +50,16 @@ class LogInViewController: UIViewController {
         view.addSubview(emailLabel)
         emailLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: solicitudDatosLabel)
          
-        let emailTextfield = utilities.textFieldSetter(isClear: false, placeHolderString: "  example@bbvk.com", isSecure: false)
+       emailTextfield = utilities.textFieldSetter(isClear: false, placeHolderString: "  example@bbvk.com", isSecure: false)
         
         view.addSubview(emailTextfield)
         emailTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailLabel)
         
-        let passwordLabel = utilities.uiLabelSetter(labelString: "Escribe tu contraseña", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
+         let passwordLabel = utilities.uiLabelSetter(labelString: "Escribe tu contraseña", labelSize: 14 ,textaligment:.left, isBold: true, isHighLighted: false)
         view.addSubview(passwordLabel)
         passwordLabel.addAnchors(left: 20, top: 15, right: 20, bottom: nil, withAnchor: .top, relativeToView: emailTextfield)
         
-        let passwordTextfield = utilities.textFieldSetter(isClear: false, placeHolderString: "  ********", isSecure: true)
+         passwordTextfield = utilities.textFieldSetter(isClear: false, placeHolderString: "  ********", isSecure: true)
         
         view.addSubview(passwordTextfield)
         passwordTextfield.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordLabel)
@@ -79,6 +84,17 @@ class LogInViewController: UIViewController {
     
     @objc func clickLogIn(){
        let homeVC = HomeViewController()
+
+        loginConnectionManager.login(email: emailTextfield.text!, password: passwordTextfield.text!) { token in
+            guard let token = token else {
+                return
+            }
+            print("Token: \(token)")
+            self.token2 = token
+        }
+        loginManager.setTandomCardGeneratons()
+        
+
       homeVC.modalPresentationStyle = .fullScreen
       present(homeVC, animated: true, completion: nil)
       }

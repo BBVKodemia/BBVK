@@ -15,6 +15,8 @@ class FormViewController: UIViewController {
     let datePicker = UIDatePicker()
     let datePickerView = UIView()
     let continueButton = UIButton()
+    let bbvkUtilities = initializerUI()
+    var registerManager: RegisterManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,12 @@ class FormViewController: UIViewController {
     }
     
     private func setupView() {
+        
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Email Validation")
+        view.addSubview(arrowButton)
+        arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
+        arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        
         view.backgroundColor = UIColor.systemBackground
         view.addSubview(nameTextField)
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -108,9 +116,17 @@ class FormViewController: UIViewController {
     }
     
     @objc func continueFlow() {
+        let validation = registerManager!.validatingData(name: nameTextField.text!, lastName: lastNameTextField.text!, occuppation: jobTextField.text!, birthDate: dateTextField.text!)
+        if validation == true {
         let vc = CountryViewController()
+            vc.registerManager = self.registerManager
+            print(registerManager?.userModel.userEmail ?? "")
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+            self.present(vc, animated: true)}
+        else {
+            let alert = bbvkUtilities.alertViewSetter(tittle: "Some fields are empty", message: "Please fill all the fields in order to proceed", buttontittle: "ok")
+                     self.present(alert, animated: true, completion: nil)
+        }
     }
     
     private func setupDatePicker() {
@@ -195,7 +211,7 @@ class FormViewController: UIViewController {
     
     @objc func donedatePicker(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
         datePickerView.isHidden = true
@@ -205,7 +221,12 @@ class FormViewController: UIViewController {
         self.view.endEditing(true)
         datePickerView.isHidden = true
     }
+    
+    @objc func dismissView() {
+       self.dismiss(animated: true, completion: nil)
+    }
 }
+
 
 
 extension FormViewController: UITextFieldDelegate {

@@ -10,6 +10,7 @@ import UIKit
 class DatosViewController: UIPageViewController {
     
     let bbvkUtilities = initializerUI()
+    var registerManager = RegisterManager()
     
     lazy var txtDatePicker: UITextField = {
         let txt = UITextField()

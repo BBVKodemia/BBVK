@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: - Welcome
+
 struct userDataC: Codable {
     let email, name, lastName, occupation: String
     let birthDate, password, phone, identityImage: String

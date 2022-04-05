@@ -13,6 +13,8 @@ class CreateAccountViewController: UIViewController {
     let constantes = constants()
     var userEmail = ""
    var emailTextfield: UITextField = UITextField()
+   var registerManager = RegisterManager()
+    
     
     
    
@@ -76,12 +78,18 @@ class CreateAccountViewController: UIViewController {
 extension CreateAccountViewController{
    
    @objc func goCreateAccount(){
-      let connection = ConnectionManager()
-      connection.postRegister()
-      
+       
+       
+       let emailValidation = registerManager.validateEmail(emailText: emailTextfield.text ?? "")
+       if emailValidation == true{
        let createAccount = FormViewController()
+           createAccount.registerManager = self.registerManager
        createAccount.modalPresentationStyle = .fullScreen
        present(createAccount, animated: true)
+       }else{
+           let alert = bbvkUtilities.alertViewSetter(tittle: "Incorrect Email Format", message: "Please verify your email", buttontittle: "ok")
+                    self.present(alert, animated: true, completion: nil)
+       }
      }
    
    @objc func dismissKeyboard() {
