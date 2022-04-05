@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     var moneyLabel: String = "0.00"
     let moneyMovementsTV = UITableView()
     var transactions = [Transaction]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +117,7 @@ class HomeViewController: UIViewController {
     
     private func getAllTransactions() {
         let url = URL(string: "https://bankodemia.kodemia.mx/transactions/me")!
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxMzYxNzQsImV4cCI6MTY0OTEzOTc3NH0.G-cXUnohg2SzRth64HifEn0RT4fyHOQ55_0G1Pu5RaI"
+        let token = defaults.string(forKey: "LoginToken")
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json",

@@ -17,6 +17,7 @@ class LogInViewController: UIViewController {
     var token2 = ""
     var loginManager = LoginManager()
     var signInButton : UIButton?
+    let defaults = UserDefaults.standard
     
 
     override func viewDidLoad() {
@@ -83,7 +84,7 @@ class LogInViewController: UIViewController {
 }
     
     @objc func clickLogIn(){
-       let homeVC = HomeViewController()
+
         if loginManager.validatingLogin(password: passwordTextfield.text!, userName: emailTextfield.text!) != true {
             let alert = utilities.alertViewSetter(tittle: "Email or password empty", message: "Please fill email and password before continue", buttontittle: "ok")
             self.present(alert, animated: true, completion: nil)
@@ -93,16 +94,19 @@ class LogInViewController: UIViewController {
             guard let token = token else {
                 return
             }
-            print("Token: \(token)")
-            self.token2 = token
+            self.defaults.set(token, forKey: "LoginToken")
         }
         }
         loginManager.setTandomCardGeneratons()
         
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+        print(defaults.string(forKey: "LoginToken"))
+//    if loginManager.getUserDefaultToken().contains("token")
+      let homeVC = HomeViewController()
       homeVC.modalPresentationStyle = .fullScreen
       present(homeVC, animated: true, completion: nil)
       }
+    }
    
    @objc func clickreturn() {
        
