@@ -9,13 +9,12 @@ import UIKit
 
 class ContactsViewController: UIViewController{
 
-    
-    
     let bbvkUtilities = initializerUI()
     let constantes = constants()
     let contactsTV = UITableView()
     let addUserButton = UIImageView()
     var contacts = [Contacts]()
+    let loginManager = LoginManager()
     
 
     override func viewDidLoad() {
@@ -67,7 +66,8 @@ class ContactsViewController: UIViewController{
     
     private func getAllContacts() {
         let url = URL(string: "https://bankodemia.kodemia.mx/contacts")!
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxNzc5NTYsImV4cCI6MTY0OTE4MTU1Nn0.MANDp4OUOWU8QRlT_DDPTUa4qRHLB1osxKto_qLJwRY"
+       // let token = loginManager.getUserDefaultToken() ?? ""
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxODM5MjgsImV4cCI6MTY0OTE4NzUyOH0.krFwfAfLOjZ8--9ctpa93z_0p49YEIfxw4kDrCXXfGY"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json",

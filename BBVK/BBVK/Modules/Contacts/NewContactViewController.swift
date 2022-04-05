@@ -25,7 +25,7 @@ class NewContactViewController: UIViewController {
         bbvkUtilities.MainViewController(viewControllerParam: view)
         
         
-        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: " AGREGAR CONTACTO")
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "CONTACTS")
         view.addSubview(arrowButton)
         arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
         arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
@@ -51,11 +51,9 @@ class NewContactViewController: UIViewController {
         firstNewPassLabel.numberOfLines = 0
         firstNewPassLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: clabeLabel)
         
-        let firstNewPass = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "", isSecure: true)
+        let firstNewPass = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "", isSecure: false)
         view.addSubview(firstNewPass)
         firstNewPass.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 30, bottom: nil, withAnchor: .top, relativeToView: firstNewPassLabel)
-
-       
         
         //segundo textfield
         let institutionLabel = bbvkUtilities.uiLabelSetter(labelString: "Institución ", labelSize: 14, textaligment: .left, isBold: true, isHighLighted: false)
@@ -63,7 +61,7 @@ class NewContactViewController: UIViewController {
         institutionLabel.numberOfLines = 0
         institutionLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: firstNewPass)
         
-        let institutionTextField = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "", isSecure: true)
+        let institutionTextField = bbvkUtilities.textFieldSetter(isClear: false, placeHolderString: "", isSecure: false)
         view.addSubview(institutionTextField)
         institutionTextField.addAnchorsAndSize(width: nil, height: 40, left: 20, top: 5, right: 30, bottom: nil, withAnchor: .top, relativeToView: institutionLabel)
         
@@ -82,7 +80,7 @@ class NewContactViewController: UIViewController {
         // correo
         
         
-        let emailLabel = bbvkUtilities.uiLabelSetter(labelString: "Correo de notificacion", labelSize: 14, textaligment: .left, isBold: true, isHighLighted: false)
+        let emailLabel = bbvkUtilities.uiLabelSetter(labelString: "Alias", labelSize: 14, textaligment: .left, isBold: true, isHighLighted: false)
         view.addSubview(emailLabel)
         emailLabel.numberOfLines = 0
         emailLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: nameTextfield)
@@ -94,8 +92,8 @@ class NewContactViewController: UIViewController {
         
     }
     
-
 }
+
 
 extension NewContactViewController{
    @objc func dismissView(){

@@ -24,7 +24,6 @@ class AddFinalViewController: UIViewController {
         
         
         
-        
         let imageContact = bbvkUtilities.uiImageViewSetter(uiImageName: "users")
         view.addSubview(imageContact)
         imageContact.addAnchors(left: 30, top: height / 2 - 70, right: 30, bottom: nil)
@@ -34,7 +33,6 @@ class AddFinalViewController: UIViewController {
          addLabel.addAnchorsAndSize(width: width, height: 40, left: 30, top: 10, right: 30, bottom: nil, withAnchor: .top, relativeToView: imageContact)
         
        
-        
         
         
        
@@ -51,9 +49,7 @@ class AddFinalViewController: UIViewController {
     
     @objc func goAddFinalAction(){
       
-        
-        
-        let next = SignInViewController()
+        let next = HomeViewController()
         next.modalPresentationStyle = .fullScreen
         present(next, animated: true, completion: nil)
    

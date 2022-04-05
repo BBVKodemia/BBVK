@@ -42,6 +42,12 @@
 		ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */; };
 		ACFE61C927F8EC17009EE2C8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */; };
 		ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */; };
+		C7FCD47B27FCBACC000A4CEC /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD47A27FCBACC000A4CEC /* DetailTransactionViewController.swift */; };
+		C7FCD47F27FCBB2C000A4CEC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD47D27FCBB2C000A4CEC /* ContactsViewController.swift */; };
+		C7FCD48027FCBB2C000A4CEC /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD47E27FCBB2C000A4CEC /* NewContactViewController.swift */; };
+		C7FCD48327FCBB3C000A4CEC /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD48227FCBB3C000A4CEC /* TransactionsViewController.swift */; };
+		C7FCD48527FCCD14000A4CEC /* addFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD48427FCCD14000A4CEC /* addFinal.swift */; };
+		C7FCD48727FCCD49000A4CEC /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FCD48627FCCD49000A4CEC /* ServicesViewController.swift */; };
 		F6061CF527FB8F3100A4FCC9 /* RegisteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */; };
 		F6061CFD27FB98DE00A4FCC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */; };
 		F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */; };
@@ -110,6 +116,12 @@
 		ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoginViewController.swift; sourceTree = "<group>"; };
 		ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C7FCD47A27FCBACC000A4CEC /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
+		C7FCD47D27FCBB2C000A4CEC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		C7FCD47E27FCBB2C000A4CEC /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		C7FCD48227FCBB3C000A4CEC /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		C7FCD48427FCCD14000A4CEC /* addFinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFinal.swift; sourceTree = "<group>"; };
+		C7FCD48627FCCD49000A4CEC /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteManager.swift; sourceTree = "<group>"; };
 		F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
+				C7FCD47A27FCBACC000A4CEC /* DetailTransactionViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 		AC2188CF27F9F3CC00545EC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C7FCD48627FCCD49000A4CEC /* ServicesViewController.swift */,
 				ACFE61B427F8EC17009EE2C8 /* uploaddocumentsunview.swift */,
 				ACFE61B627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift */,
 				ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */,
@@ -201,6 +215,8 @@
 		ACFA968027F9274B00323A37 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C7FCD48127FCBB3C000A4CEC /* Transactions */,
+				C7FCD47C27FCBB2C000A4CEC /* Contacts */,
 				F6061CFA27FB98DE00A4FCC9 /* Login */,
 				AC2188CB27F9E56700545EC9 /* Home */,
 				AC2188CA27F973B900545EC9 /* Register */,
@@ -289,6 +305,24 @@
 				F6061D0D27FC735200A4FCC9 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C7FCD47C27FCBB2C000A4CEC /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				C7FCD48427FCCD14000A4CEC /* addFinal.swift */,
+				C7FCD47D27FCBB2C000A4CEC /* ContactsViewController.swift */,
+				C7FCD47E27FCBB2C000A4CEC /* NewContactViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		C7FCD48127FCBB3C000A4CEC /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				C7FCD48227FCBB3C000A4CEC /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 		F6061CFA27FB98DE00A4FCC9 /* Login */ = {
@@ -466,6 +500,7 @@
 				ACFA967F27F9251100323A37 /* DictionaryCodes.swift in Sources */,
 				ACFE61C527F8EC17009EE2C8 /* ContrasenaViewController.swift in Sources */,
 				ACFE61C427F8EC17009EE2C8 /* uploaddocumentsunview.swift in Sources */,
+				C7FCD48327FCBB3C000A4CEC /* TransactionsViewController.swift in Sources */,
 				ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */,
 				ACFA967C27F9250700323A37 /* CodeTableVewCell.swift in Sources */,
 				ACFE61BE27F8EC17009EE2C8 /* Utils.swift in Sources */,
@@ -474,22 +509,26 @@
 				ACFE617B27F8EA11009EE2C8 /* AppDelegate.swift in Sources */,
 				F6061D0827FBFE0100A4FCC9 /* LoginManager.swift in Sources */,
 				F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */,
+				C7FCD48527FCCD14000A4CEC /* addFinal.swift in Sources */,
 				F6061D0127FBFC6000A4FCC9 /* LoginConnectionManager.swift in Sources */,
 				AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */,
+				C7FCD48027FCBB2C000A4CEC /* NewContactViewController.swift in Sources */,
 				ACFE61C327F8EC17009EE2C8 /* BienvenidaViewController.swift in Sources */,
-				C7C47EEE27FCA19300656FD8 /* NewContactViewController.swift in Sources */,
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
 				ACFE61BC27F8EC17009EE2C8 /* constants.swift in Sources */,
 				AC2188DB27FA6E6A00545EC9 /* TransactionDetailsViewController.swift in Sources */,
+				C7FCD47F27FCBB2C000A4CEC /* ContactsViewController.swift in Sources */,
 				F6061CF527FB8F3100A4FCC9 /* RegisteManager.swift in Sources */,
 				F6061CFD27FB98DE00A4FCC9 /* ViewController.swift in Sources */,
 				AC2188E327FA7D2000545EC9 /* TransactionCompleted.swift in Sources */,
 				ACFA967B27F9250700323A37 /* FormViewController.swift in Sources */,
+				C7FCD47B27FCBACC000A4CEC /* DetailTransactionViewController.swift in Sources */,
 				AC2188D727F9FAC400545EC9 /* UserModel.swift in Sources */,
 				AC2188D327F9F6FB00545EC9 /* EndPoints.swift in Sources */,
 				AC2188E127FA7CDF00545EC9 /* LoadingProcessingViewController.swift in Sources */,
 				ACFE61BD27F8EC17009EE2C8 /* BBVKUtilities.swift in Sources */,
+				C7FCD48727FCCD49000A4CEC /* ServicesViewController.swift in Sources */,
 				AC2188D927FA2D2800545EC9 /* UserModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

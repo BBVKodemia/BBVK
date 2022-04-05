@@ -37,9 +37,9 @@ class HomeViewController: UIViewController {
        view.addSubview(moneyLabel)
        moneyLabel.addAnchors(left: 20, top: 10, right: 20, bottom: nil, withAnchor: .top , relativeToView: moneyAvailableLabel)
        
-       let sendButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: true, isgreen: false, buttonText: "Send")
+       let sendButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: true, isgreen: true, buttonText: "Send")
         sendButton.addTarget(self, action: #selector(sendMoney), for: .touchUpInside)
-       let receiveButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Receive")
+       let receiveButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: true, isgreen: false, buttonText: "Receive")
         receiveButton.addTarget(self, action: #selector(receiveMoney), for: .touchUpInside)
        
         
@@ -74,11 +74,13 @@ class HomeViewController: UIViewController {
        cardButton.backgroundColor = .black
        cardButton.setImage(UIImage(systemName: "creditcard"), for: .normal)
        cardButton.tintColor = .white
+       cardButton.addTarget(self, action: #selector(goToCard), for: .touchUpInside)
+
        let servicesButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: " Services")
        servicesButton.backgroundColor = .black
        servicesButton.setImage(UIImage(systemName: "menubar.arrow.up.rectangle"), for: .normal)
        servicesButton.tintColor = .white
-       servicesButton.addTarget(self, action: #selector(goToService), for: .touchUpInside)
+       servicesButton.addTarget(self, action: #selector(goToServices), for: .touchUpInside)
 
        let stackFooter = UIStackView(arrangedSubviews: [startButton, cardButton,servicesButton])
        stackFooter.distribution = .fillEqually
@@ -151,7 +153,7 @@ class HomeViewController: UIViewController {
     
     private func receive(concept: String, amount: Double) {
         let url = URL(string: "https://bankodemia.kodemia.mx/transactions")!
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxNDE3ODcsImV4cCI6MTY0OTE0NTM4N30.Tz1Q-NJH8-lT-sk0pt1jrn2G9U9a_YVEycazt93Zuik"
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxODUxNTgsImV4cCI6MTY0OTI3MTU1OH0.iyWvDB8jm6AD9CUQDdpxB7EIWBcia_Lzm1UeAwwDqJM"
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json",
@@ -211,6 +213,24 @@ extension HomeViewController{
       let detailstransactionVC = TransferMoneyViewController()
       detailstransactionVC.modalPresentationStyle = .fullScreen
       present(detailstransactionVC, animated: true, completion: nil)
+   }
+}
+
+extension HomeViewController{
+   
+   @objc func goToCard(){
+      let cardVC = TransferMoneyViewController()
+      cardVC.modalPresentationStyle = .fullScreen
+      present(cardVC, animated: true, completion: nil)
+   }
+}
+
+extension HomeViewController{
+   
+   @objc func goToServices(){
+      let cardVC = ServicesViewController()
+      cardVC.modalPresentationStyle = .fullScreen
+      present(cardVC, animated: true, completion: nil)
    }
 }
 
@@ -309,8 +329,6 @@ struct Transaction: Codable {
     let amount: Double
     let created_at: String
 }
-
-
 
 extension Data
 {
