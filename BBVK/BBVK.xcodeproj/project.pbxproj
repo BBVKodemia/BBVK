@@ -157,7 +157,6 @@
 				FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */,
 				C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -319,10 +318,9 @@
 		F6061CFA27FB98DE00A4FCC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D0F27FCAE5900A4FCC9 /* View */,
 				F6061D0227FBFCC000A4FCC9 /* Model */,
 				F6061CFF27FBFC4B00A4FCC9 /* ModelView */,
-				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
-				F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -344,6 +342,15 @@
 				F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F6061D0F27FCAE5900A4FCC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */,
+				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
