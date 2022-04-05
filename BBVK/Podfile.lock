@@ -1,0 +1,20 @@
+PODS:
+  - IQKeyboardManager (6.5.9)
+  - KeychainAccess (4.2.2)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - KeychainAccess
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - KeychainAccess
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+
+PODFILE CHECKSUM: e80b8b84cf63e06eac87941c9a2a014664da7b79
+
+COCOAPODS: 1.11.2
