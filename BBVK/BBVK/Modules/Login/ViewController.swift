@@ -62,12 +62,15 @@ class ViewController: UIViewController {
     }
     
     @objc func goCreateAccount(){
-         print("Vamos por el menu!")
           let createAccount = CreateAccountViewController()
         createAccount.modalPresentationStyle = .fullScreen
         present(createAccount, animated: true, completion: {
-           
+
         })
+        
+//        let photo = verificacionIdentidadWelcome()
+//        photo.modalPresentationStyle = .fullScreen
+//        present(photo, animated: true)
       }
    
    @objc func LogInFunciton(){
@@ -75,7 +78,6 @@ class ViewController: UIViewController {
       logInButton.modalPresentationStyle = .fullScreen
       present(logInButton, animated: true, completion: nil)
      }
-
     
 
 }

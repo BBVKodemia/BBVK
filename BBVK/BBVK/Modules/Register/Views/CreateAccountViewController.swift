@@ -13,6 +13,8 @@ class CreateAccountViewController: UIViewController {
     let constantes = constants()
     var userEmail = ""
    var emailTextfield: UITextField = UITextField()
+   var registerManager = RegisterManager()
+    
     
     
    
@@ -77,7 +79,7 @@ extension CreateAccountViewController{
    
    @objc func goCreateAccount(){
        
-       lazy var registerManager = RegisterManager()
+ 
        let emailValidation = registerManager.validateEmail(emailText: emailTextfield.text ?? "")
        if emailValidation == true{
        let createAccount = FormViewController()

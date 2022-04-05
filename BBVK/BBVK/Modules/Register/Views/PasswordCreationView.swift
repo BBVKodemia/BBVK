@@ -10,6 +10,8 @@ import UIKit
 
 class PasswordViewControllers: UIViewController{
    let bbvkUtilities = initializerUI()
+    var passwordTextField2 = UITextField()
+    var passwordTextField = UITextField()
    
    override func viewDidLoad() {
       bbvkUtilities.MainViewController(viewControllerParam: view)
@@ -21,6 +23,7 @@ class PasswordViewControllers: UIViewController{
       let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "CONTRASEÑA")
       view.addSubview(arrowButton)
       arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
+       arrowButton.addTarget(self, action: #selector(dismissReturn), for: .touchUpInside)
       
       let welcomeLabel = bbvkUtilities.uiLabelSetter(labelString: "Crea una contraseña segura", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
       view.addSubview(welcomeLabel)
@@ -41,7 +44,7 @@ class PasswordViewControllers: UIViewController{
       view.addSubview(passwordLabel)
       passwordLabel.addAnchors(left: 20, top: 40, right: 20, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel2)
       // password textfield
-      let passwordTextField =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Contraseña", isSecure: true)
+      passwordTextField =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Contraseña", isSecure: true)
       passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
       passwordTextField.layer.borderWidth = 1
       passwordTextField.layer.cornerRadius = 3
@@ -49,12 +52,12 @@ class PasswordViewControllers: UIViewController{
       passwordTextField.addAnchorsAndSize(width: width/10, height: width/10, left: 20, top: 5, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordLabel)
       
       // label for confirm password textfield
-      let passwordLabel2 = bbvkUtilities.uiLabelSetter(labelString: "Confirmas Contraseña", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
+      let passwordLabel2 = bbvkUtilities.uiLabelSetter(labelString: "Confirm Password", labelSize: 18, textaligment: .left, isBold: false, isHighLighted: false)
       view.addSubview(passwordLabel2)
       passwordLabel2.addAnchors(left: 20, top: 40, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordTextField)
       
       // confirm password textfield
-      let passwordTextField2 =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Confirma Contraseña", isSecure: true)
+       passwordTextField2 =  bbvkUtilities.textFieldSetter(isClear: true, placeHolderString: "  Confirm Password", isSecure: true)
       passwordTextField2.layer.borderColor = UIColor.lightGray.cgColor
       passwordTextField2.layer.borderWidth = 1
       passwordTextField2.layer.cornerRadius = 3
@@ -62,7 +65,7 @@ class PasswordViewControllers: UIViewController{
       passwordTextField2.addAnchorsAndSize(width: width/10, height: width/10, left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: passwordLabel2)
       
       
-      let understoodButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Crear Contraseña")
+      let understoodButton = bbvkUtilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Create Password")
              view.addSubview(understoodButton)
              understoodButton.addAnchors(left: 30, top: nil, right: 30, bottom: 35)
       
@@ -78,9 +81,23 @@ class PasswordViewControllers: UIViewController{
 extension PasswordViewControllers{
    
    @objc func sendData(){
+       let registerManager = RegisterManager()
+       let validationPassword = registerManager.validatingPassword(password: passwordTextField.text!, secondPassword: passwordTextField2.text!)
+       print(validationPassword)
+       if validationPassword == true {
       let sendDataVC = LoadingViewController()
       sendDataVC.modalPresentationStyle = .fullScreen
       present(sendDataVC, animated: true, completion: nil)
+       }else {
+           let alert = bbvkUtilities.alertViewSetter(tittle: "Your password doesnt match", message: "Please Verify Your Password", buttontittle: "ok")
+           self.present(alert, animated: true, completion: nil)
+       }
    }
+    
+    @objc func dismissReturn() {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
    
 }

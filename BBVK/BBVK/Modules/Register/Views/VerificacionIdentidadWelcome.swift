@@ -10,6 +10,8 @@ import UIKit
 
 class verificacionIdentidadWelcome: UIViewController{
    let bbvkUtilities = initializerUI()
+    let userModel = UserModel()
+    var registerManager : RegisterManager?
    
    override func  viewDidLoad() {
       super.viewDidLoad()
@@ -21,26 +23,26 @@ class verificacionIdentidadWelcome: UIViewController{
     func initUi (){
         
         // Arrow Button
-        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "IDENTIDAD")
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "PHONE NUMBER")
         view.addSubview(arrowButton)
         arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
         
-        let indicationsLabel = bbvkUtilities.uiLabelSetter(labelString: "Selecciona el tipo de documento que deseas fotografiar", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
+        let indicationsLabel = bbvkUtilities.uiLabelSetter(labelString: "Select a document to verify your identity", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
         view.addSubview(indicationsLabel)
         indicationsLabel.numberOfLines = 0
         indicationsLabel.addAnchors(left: 20, top: 30, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
         
-        let ineButton = bbvkUtilities.uiButtonSetterClear(ispurple: false, isgreen: false, buttonText: "INE")
+        let ineButton = bbvkUtilities.uiButtonSetter(ispurple: true, isgray: false, isgreen: false, buttonText: "INE")
         view.addSubview(ineButton)
         ineButton.addAnchors(left: 40, top: 80, right: 40, bottom: nil, withAnchor: .top, relativeToView: indicationsLabel)
         ineButton.addTarget(self, action: #selector(ineclick), for: .touchUpInside)
         
-        let docMicBtn = bbvkUtilities.uiButtonSetterClear(ispurple: false, isgreen: false, buttonText: "Documento Migratorio")
+        let docMicBtn = bbvkUtilities.uiButtonSetter(ispurple: true, isgray: false, isgreen: false, buttonText: "Immigration Document")
         view.addSubview(docMicBtn)
         docMicBtn.addAnchors(left: 40, top: 30, right: 40, bottom: nil, withAnchor: .top, relativeToView: ineButton)
         docMicBtn.addTarget(self, action: #selector(docMicBtnclick), for: .touchUpInside)
         
-        let passportBtn = bbvkUtilities.uiButtonSetterClear(ispurple: false, isgreen: false, buttonText: "Pasaporte")
+        let passportBtn = bbvkUtilities.uiButtonSetter(ispurple: true, isgray: false, isgreen: false, buttonText: "Passport")
         view.addSubview(passportBtn)
         passportBtn.addAnchors(left: 40, top: 30, right: 40, bottom: nil, withAnchor: .top, relativeToView: docMicBtn)
         passportBtn.addTarget(self, action: #selector(passportBtnclick), for: .touchUpInside)
@@ -62,6 +64,7 @@ class verificacionIdentidadWelcome: UIViewController{
 extension verificacionIdentidadWelcome {
 
     @objc func ineclick() {
+        registerManager!.userModel.useridentityImageType = "INE"
         let ineClickVc = UploadDocumentViewController(arrowBttntct: "INE")
         ineClickVc.modalPresentationStyle = .fullScreen
         self.present(ineClickVc, animated: true, completion: nil)
@@ -69,14 +72,16 @@ extension verificacionIdentidadWelcome {
     }
     
     @objc func docMicBtnclick() {
-        let docMicBtnclickVc = UploadDocumentViewController(arrowBttntct: "Documento Migratorio")
+        registerManager!.userModel.useridentityImageType = "Immigrant Document"
+        let docMicBtnclickVc = UploadDocumentViewController(arrowBttntct: "Immigrant Document")
         docMicBtnclickVc.modalPresentationStyle = .fullScreen
         self.present(docMicBtnclickVc, animated: true, completion: nil)
         
     }
     
     @objc func passportBtnclick() {
-        let passportBtnclickVc = UploadDocumentViewController(arrowBttntct: "Pasaporte")
+        registerManager!.userModel.useridentityImageType = "Passport"
+        let passportBtnclickVc = UploadDocumentViewController(arrowBttntct: "Passport")
         passportBtnclickVc.modalPresentationStyle = .fullScreen
         self.present(passportBtnclickVc, animated: true, completion: nil)
         

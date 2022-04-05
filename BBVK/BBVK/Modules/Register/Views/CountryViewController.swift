@@ -12,6 +12,8 @@ class CountryViewController: UIViewController {
     let codeCountryTextField = UITextField()
     let continueButton = UIButton()
     let tableView = UITableView()
+    let bbvkUtilities = initializerUI()
+    var registerManager: RegisterManager?
 
     
     override func viewDidLoad() {
@@ -21,6 +23,12 @@ class CountryViewController: UIViewController {
     }
     
     private func setupView() {
+        
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Personal Information")
+        view.addSubview(arrowButton)
+        arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
+        arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        
         view.backgroundColor = UIColor.systemBackground
         
         view.addSubview(codeCountryTextField)
@@ -114,9 +122,13 @@ class CountryViewController: UIViewController {
     
     @objc func continueFlow() {
        let verificacionVC = verificacionIdentidadWelcome()
+        if registerManager!.validatingPhone(lada: codeCountryTextField.text!, phone: phoneTextField.text!) == false{
+            let alert = bbvkUtilities.alertViewSetter(tittle: "Some fields are empty", message: "Please fill all the fields in order to proceed", buttontittle: "ok")
+                     self.present(alert, animated: true, completion: nil)
+        }else{
        verificacionVC.modalPresentationStyle = .fullScreen
        present(verificacionVC, animated: true, completion: nil)
-        
+        }
     }
 }
 
@@ -164,5 +176,9 @@ extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         codeCountryTextField.text = String(CountryDictionary[indexPath.item].split(separator: " ").first ?? "")
         tableView.isHidden = true
+    }
+    
+    @objc func dismissView() {
+       self.dismiss(animated: true, completion: nil)
     }
 }
