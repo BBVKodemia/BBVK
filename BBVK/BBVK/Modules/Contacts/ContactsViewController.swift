@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UIViewController{
+
+    
     
     let bbvkUtilities = initializerUI()
     let constantes = constants()
-    var userLabel: String = ""
-    var moneyLabel: String = "0.00"
     let contactsTV = UITableView()
     let addUserButton = UIImageView()
     var contacts = [Contacts]()
@@ -28,7 +28,7 @@ class ContactsViewController: UIViewController {
         bbvkUtilities.HomeViewController(viewControllerParam: view)
         
       
-        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Inicio")
+        let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Home")
         view.addSubview(arrowButton)
         arrowButton.addAnchors(left: 20, top: 150, right: nil , bottom: nil)
         arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
@@ -45,14 +45,29 @@ class ContactsViewController: UIViewController {
         addUserButton.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                   action: #selector(newContact)))
         addUserButton.contentMode = .scaleAspectFill
+        let welcomeLabel = bbvkUtilities.uiLabelSetter(labelString: "Contacts", labelSize: 18, textaligment: .left, isBold: true, isHighLighted: false)
+        view.addSubview(welcomeLabel)
+        welcomeLabel.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
+        
+        view.addSubview(contactsTV)
+        contactsTV.translatesAutoresizingMaskIntoConstraints = false
+         NSLayoutConstraint.activate([
+            contactsTV.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contactsTV.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contactsTV.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
+            contactsTV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+         ])
+        contactsTV.register(ContactsTableViewCell.self, forCellReuseIdentifier: "cell")
+        contactsTV.delegate = self
+        contactsTV.dataSource = self
         
         
     }
     
     
     private func getAllContacts() {
-        let url = URL(string: "https://bankodemia.kodemia.mx/transactions/contacts")!
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxMzYxNzQsImV4cCI6MTY0OTEzOTc3NH0.G-cXUnohg2SzRth64HifEn0RT4fyHOQ55_0G1Pu5RaI"
+        let url = URL(string: "https://bankodemia.kodemia.mx/contacts")!
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjRhNmYwNTg1NmRiYzNlMTE1ZmYyM2EiLCJpYXQiOjE2NDkxNzc5NTYsImV4cCI6MTY0OTE4MTU1Nn0.MANDp4OUOWU8QRlT_DDPTUa4qRHLB1osxKto_qLJwRY"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json",
@@ -68,9 +83,9 @@ class ContactsViewController: UIViewController {
             }
             data.printJSON()
             do {
-                let recipe = try JSONDecoder().decode(AllRecipe.self, from: data)
+                let friend = try JSONDecoder().decode(AllContacts.self, from: data)
                 DispatchQueue.main.async {
-                  //  self.contacts = recipe.data.contacts
+                    self.contacts = friend.data.contacts
                     self.contactsTV.reloadData()
                 }
             }catch let error {
@@ -84,12 +99,96 @@ class ContactsViewController: UIViewController {
 
 }
 
+extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ContactsTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.contact = contacts[indexPath.item]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+}
+
+
+class ContactsTableViewCell: UITableViewCell {
+    let nameLabel = UILabel()
+    let emailLabel = UILabel()
+    let tarjetaLabel = UILabel()
+    
+    var contact: Contacts? {
+        didSet{
+            guard let contact = contact else {
+                return
+            }
+            nameLabel.text = contact.shortName
+            tarjetaLabel.text = contact._id
+            emailLabel.text = contact.user.email
+        }
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+    }
+    
+    private func setupView() {
+        //selectionStyle = .none
+        contentView.addSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+        ])
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        
+//        contentView.addSubview(emailLabel)
+//        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            emailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+//            emailLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+//        ])
+//
+        contentView.addSubview(tarjetaLabel)
+        tarjetaLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tarjetaLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            tarjetaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+        ])
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+struct AllContacts: Codable {
+    let data: DataRecipe
+    
+    struct DataRecipe: Codable {
+        let contacts: [Contacts]
+    }
+}
 
 struct Contacts: Codable {
     let _id: String
     let shortName: String
-    let user: String
+    let user: User
+    
+    struct User: Codable {
+        let email : String
+    }
 }
+
+
 
 
 
@@ -101,10 +200,11 @@ extension ContactsViewController{
 
 extension ContactsViewController{
 @objc func newContact(){
-      let toGoContacts = ContactsViewController()
+      let toGoContacts = NewContactViewController()
     toGoContacts.modalPresentationStyle = .fullScreen
     present(toGoContacts, animated: true, completion: {
        
     })
   }
 }
+

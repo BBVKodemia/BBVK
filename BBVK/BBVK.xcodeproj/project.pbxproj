@@ -50,6 +50,7 @@
 		C744CD0227FBF536001AA609 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0127FBF536001AA609 /* ContactsViewController.swift */; };
 		C744CD0427FBF54B001AA609 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0327FBF54B001AA609 /* TransactionsViewController.swift */; };
 		C744CD0627FC076E001AA609 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744CD0527FC076E001AA609 /* DetailTransactionViewController.swift */; };
+		C7C47EEE27FCA19300656FD8 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C47EED27FCA19300656FD8 /* NewContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		C744CD0127FBF536001AA609 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		C744CD0327FBF54B001AA609 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		C744CD0527FC076E001AA609 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
+		C7C47EED27FCA19300656FD8 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				C744CD0127FBF536001AA609 /* ContactsViewController.swift */,
+				C7C47EED27FCA19300656FD8 /* NewContactViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				ACFE617B27F8EA11009EE2C8 /* AppDelegate.swift in Sources */,
 				AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */,
 				ACFE61C327F8EC17009EE2C8 /* BienvenidaViewController.swift in Sources */,
+				C7C47EEE27FCA19300656FD8 /* NewContactViewController.swift in Sources */,
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
 				C744CD0627FC076E001AA609 /* DetailTransactionViewController.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
