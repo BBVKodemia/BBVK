@@ -89,9 +89,14 @@ class HomeViewController: UIViewController {
        stackFooter.addAnchors(left: 0, top: (constants.height/20)*18.5, right: 0, bottom: 0)
     }
     
-    @objc func sendMoney() {
-        
-    }
+    
+    @objc func sendMoney(){
+          let toGoContacts = ContactsViewController()
+        toGoContacts.modalPresentationStyle = .fullScreen
+        present(toGoContacts, animated: true, completion: {
+           
+        })
+      }
     
     @objc func receiveMoney() {
         let alert = UIAlertController(title: "Recibir", message: "Escribe la cantidad que quieres recibir", preferredStyle: .alert)
