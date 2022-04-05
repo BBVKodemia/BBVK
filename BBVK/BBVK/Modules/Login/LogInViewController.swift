@@ -11,9 +11,11 @@ class LogInViewController: UIViewController {
     
     let utilities = initializerUI()
     let constantes = constants()
-    var loginManager = LoginConnectionManager()
+    var loginConnectionManager = LoginConnectionManager()
     var emailTextfield = UITextField()
     var passwordTextfield = UITextField()
+    var token2 = ""
+    var loginManager = LoginManager()
     
     var signInButton : UIButton?
     
@@ -82,15 +84,16 @@ class LogInViewController: UIViewController {
     
     @objc func clickLogIn(){
        let homeVC = HomeViewController()
-        var token2 = ""
-        loginManager.login(email: emailTextfield.text!, password: passwordTextfield.text!) { token in
+
+        loginConnectionManager.login(email: emailTextfield.text!, password: passwordTextfield.text!) { token in
             guard let token = token else {
                 return
             }
             print("Token: \(token)")
-            token2 = token
+            self.token2 = token
         }
-        print(token2)
+        loginManager.setTandomCardGeneratons()
+        
 
       homeVC.modalPresentationStyle = .fullScreen
       present(homeVC, animated: true, completion: nil)

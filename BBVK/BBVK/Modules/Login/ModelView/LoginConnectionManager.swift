@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct LoginConnectionManager{
+    let loginManager = LoginManager()
     private func createRequest(url: URL,
                                httpMethod: String,
                                body: Data? = nil) -> URLRequest {
@@ -43,6 +44,7 @@ struct LoginConnectionManager{
                       let _ = info["expiresIn"] as? String  else {
                           return completion(nil)
                       }
+                loginManager.setUserDefaultToken(token: token)
                 completion(token)
             } catch let error {
                 print(error)

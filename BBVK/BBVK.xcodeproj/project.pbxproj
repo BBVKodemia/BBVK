@@ -51,6 +51,7 @@
 		F6061D0827FBFE0100A4FCC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0727FBFE0100A4FCC9 /* LoginManager.swift */; };
 		F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0927FC022100A4FCC9 /* responseData.swift */; };
 		F6061D0C27FC04A900A4FCC9 /* respondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */; };
+		F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0D27FC735200A4FCC9 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		F6061D0727FBFE0100A4FCC9 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		F6061D0927FC022100A4FCC9 /* responseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseData.swift; sourceTree = "<group>"; };
 		F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondeModel.swift; sourceTree = "<group>"; };
+		F6061D0D27FC735200A4FCC9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 				AC2188DE27FA75A200545EC9 /* TransferMoney.swift */,
 				AC2188E027FA7CDF00545EC9 /* LoadingProcessingViewController.swift */,
 				AC2188E227FA7D2000545EC9 /* TransactionCompleted.swift */,
+				F6061D0D27FC735200A4FCC9 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */,
 				AC2188DD27FA751500545EC9 /* SendMoney.swift in Sources */,
 				ACFE61C627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift in Sources */,
+				F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */,
 				ACFE61C927F8EC17009EE2C8 /* CreateAccountViewController.swift in Sources */,
 				ACFE61CB27F8EC17009EE2C8 /* LoadingViewController.swift in Sources */,
 				AC2188CD27F9E58700545EC9 /* HomeViewController.swift in Sources */,
