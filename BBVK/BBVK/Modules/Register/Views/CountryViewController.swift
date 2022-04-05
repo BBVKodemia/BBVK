@@ -15,6 +15,7 @@ class CountryViewController: UIViewController {
     let bbvkUtilities = initializerUI()
     var registerManager: RegisterManager?
 
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class CountryViewController: UIViewController {
     }
     
     private func setupView() {
-        
+        bbvkUtilities.MainViewController(viewControllerParam: view)
         let arrowButton = bbvkUtilities.ArrowButton(arrowBttnTxt: "Personal Information")
         view.addSubview(arrowButton)
         arrowButton.addAnchors(left: 20, top: 85, right: nil , bottom: nil)
@@ -31,32 +32,23 @@ class CountryViewController: UIViewController {
         
         view.backgroundColor = UIColor.systemBackground
         
+        let instructionsLabel = bbvkUtilities.uiLabelSetter(labelString: "Please fill below form with your phone number", labelSize: 18, textaligment: .center, isBold: false, isHighLighted: false)
+        view.addSubview(instructionsLabel)
+        instructionsLabel.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
+        
         view.addSubview(codeCountryTextField)
-        codeCountryTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            codeCountryTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                          constant: 20),
-            codeCountryTextField.widthAnchor.constraint(equalToConstant: 60),
-            codeCountryTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                      constant: 80),
-            codeCountryTextField.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        codeCountryTextField.addAnchorsAndSize(width: 60, height: nil, left: 20, top: 40, right: nil, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel)
         codeCountryTextField.placeholder = "+ 52"
         codeCountryTextField.borderStyle = .roundedRect
+        codeCountryTextField.text = "+52"
         
         
         view.addSubview(phoneTextField)
-        phoneTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            phoneTextField.leadingAnchor.constraint(equalTo: codeCountryTextField.trailingAnchor),
-            phoneTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -20),
-            phoneTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                constant: 80),
-            phoneTextField.heightAnchor.constraint(equalToConstant: 44)
-        ])
-        phoneTextField.placeholder = "Tu numero celular"
+        phoneTextField.addAnchors(left: nil, top: 40, right: nil, bottom: nil, withAnchor: .top, relativeToView: instructionsLabel)
+        phoneTextField.addAnchors(left: 5, top: nil, right: 20, bottom: nil, withAnchor: .left, relativeToView: codeCountryTextField)
+        phoneTextField.placeholder = "Your phone number"
         phoneTextField.borderStyle = .roundedRect
+        phoneTextField.maxLength = 10
         
         view.addSubview(continueButton)
         continueButton.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +60,7 @@ class CountryViewController: UIViewController {
             continueButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        continueButton.backgroundColor = .red
+        continueButton.backgroundColor = constants.backgroundButtoncolorGreen
         continueButton.clipsToBounds = true
         continueButton.layer.masksToBounds = true
         continueButton.layer.cornerRadius = 8
@@ -182,4 +174,45 @@ extension CountryViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func dismissView() {
        self.dismiss(animated: true, completion: nil)
     }
+}
+private var kAssociationKeyMaxLength: Int = 0
+extension UITextField {
+@IBInspectable var maxLength: Int {
+    get {
+        if let length = objc_getAssociatedObject(self, &kAssociationKeyMaxLength) as? Int {
+            return length
+        } else {
+            return Int.max
+        }
+    }
+    set {
+        objc_setAssociatedObject(self, &kAssociationKeyMaxLength, newValue, .OBJC_ASSOCIATION_RETAIN)
+        self.addTarget(self, action: #selector(checkMaxLength), for: .editingChanged)
+    }
+}
+
+func isInputMethod() -> Bool {
+    if let positionRange = self.markedTextRange {
+        if let _ = self.position(from: positionRange.start, offset: 0) {
+            return true
+        }
+    }
+    return false
+}
+
+
+@objc func checkMaxLength(textField: UITextField) {
+    
+    guard !self.isInputMethod(), let prospectiveText = self.text,
+        prospectiveText.count > maxLength
+        else {
+            return
+    }
+    
+    let selection = selectedTextRange
+    let maxCharIndex = prospectiveText.index(prospectiveText.startIndex, offsetBy: maxLength)
+    text = prospectiveText.substring(to: maxCharIndex)
+    selectedTextRange = selection
+  }
+
 }

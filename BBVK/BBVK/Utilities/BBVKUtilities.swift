@@ -127,6 +127,13 @@ class initializerUI{
         
         return alert
     }
+    
+    func alertDismissViewSetter(tittle: String, message: String) -> UIAlertController{
+        
+        let alert = UIAlertController(title: tittle, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        return alert
+    }
    
    func MainViewController(viewControllerParam: UIView) {
       let headerImage: UIImageView?
