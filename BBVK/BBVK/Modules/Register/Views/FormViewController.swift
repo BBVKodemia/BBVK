@@ -32,6 +32,7 @@ class FormViewController: UIViewController {
         arrowButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         
         let instructionsLabel = bbvkUtilities.uiLabelSetter(labelString: "Please fill below form with your information", labelSize: 18, textaligment: .center, isBold: false, isHighLighted: false)
+        instructionsLabel.numberOfLines = 0
         view.addSubview(instructionsLabel)
         instructionsLabel.addAnchors(left: 20, top: 20, right: 20, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
         

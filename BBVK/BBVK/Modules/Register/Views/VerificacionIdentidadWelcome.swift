@@ -48,11 +48,11 @@ class verificacionIdentidadWelcome: UIViewController{
         passportBtn.addTarget(self, action: #selector(passportBtnclick), for: .touchUpInside)
         
         //footer 1 with link
-        let footerLabel1 = bbvkUtilities.uiLabelSetter(labelString: "Conoce", labelSize: 14, textaligment: .left, isBold: false, isHighLighted: false)
+        let footerLabel1 = bbvkUtilities.uiLabelSetter(labelString: "Want to know", labelSize: 14, textaligment: .left, isBold: false, isHighLighted: false)
         view.addSubview(footerLabel1)
         footerLabel1.addAnchors(left: constants.width/10, top: nil, right: nil, bottom: (constants.height/10))
         //footer 2 with link
-        let footerLabel2 = bbvkUtilities.uiLabelSetter(labelString: "Como protegemos tus documentos", labelSize: 14, textaligment: .left, isBold: false, isHighLighted: true)
+        let footerLabel2 = bbvkUtilities.uiLabelSetter(labelString: "how we protect your information?", labelSize: 14, textaligment: .left, isBold: false, isHighLighted: true)
         view.addSubview(footerLabel2)
         footerLabel2.addAnchors(left: 10, top: nil, right: nil, bottom: (constants.height/10) , withAnchor: .left, relativeToView: footerLabel1)
         

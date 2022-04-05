@@ -10,10 +10,10 @@ import UIKit
 
 class ConnectionManager{
     var userModelInfo: UserModel?
-    var responseString: String = ""
     
     
     func postRegister()-> String{
+        var responseString: String?
       // Prepare URL
       let url = URL(string: BBVKEndPoints.registerEndPoint)
       guard let requestUrl = url else { fatalError() }
@@ -37,12 +37,11 @@ class ConnectionManager{
        
               // Convert HTTP Response Data to a String
               if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                  print("Response data string:\n \(dataString)")
-                  self.responseString = dataString
+                 responseString = dataString
               }
       }
       task.resume()
-        return responseString
+        return responseString ?? "No Information"
    }
     
 }

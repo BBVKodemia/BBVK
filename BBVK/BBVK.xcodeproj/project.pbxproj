@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A42881674F6CEDEB209923B /* Pods_BBVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */; };
 		AC2188CD27F9E58700545EC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188CC27F9E58700545EC9 /* HomeViewController.swift */; };
 		AC2188D327F9F6FB00545EC9 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188D227F9F6FB00545EC9 /* EndPoints.swift */; };
 		AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2188D427F9F80400545EC9 /* ConectionManager.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2188CC27F9E58700545EC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC2188D227F9F6FB00545EC9 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		AC2188D427F9F80400545EC9 /* ConectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConectionManager.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		ACFE61B827F8EC17009EE2C8 /* DataLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoginViewController.swift; sourceTree = "<group>"; };
 		ACFE61B927F8EC17009EE2C8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		ACFE61BB27F8EC17009EE2C8 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBVK.release.xcconfig"; path = "Target Support Files/Pods-BBVK/Pods-BBVK.release.xcconfig"; sourceTree = "<group>"; };
 		F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteManager.swift; sourceTree = "<group>"; };
 		F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		F6061D0927FC022100A4FCC9 /* responseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseData.swift; sourceTree = "<group>"; };
 		F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondeModel.swift; sourceTree = "<group>"; };
 		F6061D0D27FC735200A4FCC9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBVK.debug.xcconfig"; path = "Target Support Files/Pods-BBVK/Pods-BBVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A42881674F6CEDEB209923B /* Pods_BBVK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +151,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04F4BB15A94720A42E362663 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */,
+				C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC2188CA27F973B900545EC9 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +230,8 @@
 				ACFE619027F8EA13009EE2C8 /* BBVKTests */,
 				ACFE619A27F8EA13009EE2C8 /* BBVKUITests */,
 				ACFE617827F8EA11009EE2C8 /* Products */,
+				04F4BB15A94720A42E362663 /* Pods */,
+				E4B7E37D214D9A6CFF9FD2CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +308,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E4B7E37D214D9A6CFF9FD2CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DE7FC76F90DE95E6ABEB58D /* Pods_BBVK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6061CFA27FB98DE00A4FCC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACFE61A127F8EA13009EE2C8 /* Build configuration list for PBXNativeTarget "BBVK" */;
 			buildPhases = (
+				A84B2991291BC76139E74B34 /* [CP] Check Pods Manifest.lock */,
 				ACFE617327F8EA11009EE2C8 /* Sources */,
 				ACFE617427F8EA11009EE2C8 /* Frameworks */,
 				ACFE617527F8EA11009EE2C8 /* Resources */,
+				7009CE0CC3065AAD648E3C70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +473,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7009CE0CC3065AAD648E3C70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BBVK/Pods-BBVK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A84B2991291BC76139E74B34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BBVK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACFE617327F8EA11009EE2C8 /* Sources */ = {
@@ -663,6 +732,7 @@
 		};
 		ACFE61A227F8EA13009EE2C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -692,6 +762,7 @@
 		};
 		ACFE61A327F8EA13009EE2C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A484453E5323CE6AF7D224 /* Pods-BBVK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

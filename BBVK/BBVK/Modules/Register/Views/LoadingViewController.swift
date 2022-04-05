@@ -35,7 +35,7 @@ class LoadingViewController: UIViewController{
        let responseString = self.conectionManager.postRegister()
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-          
+          print(" este es el responseString \(responseString)")
           if responseString.contains("success"){
          let loadingVC = ThankYouViewController()
          loadingVC.modalPresentationStyle = .fullScreen
