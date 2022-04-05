@@ -8,6 +8,7 @@
 import Foundation
 class LoginManager{
     let defaults = UserDefaults.standard
+    var validationLogin = false
     
     func setUserDefaultToken(token: String) {
         defaults.setValue(token, forKey: "loginToken")
@@ -35,6 +36,16 @@ class LoginManager{
            number += "\(Int.random(in: 1...9))"
         }
         return number
+    }
+    
+    func validatingLogin(password: String, userName: String) -> Bool {
+
+        if userName == "" || password == "" {
+            validationLogin = false
+        } else {
+            validationLogin = true
+        }
+        return validationLogin
     }
 
 

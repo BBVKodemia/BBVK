@@ -52,6 +52,9 @@
 		F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0927FC022100A4FCC9 /* responseData.swift */; };
 		F6061D0C27FC04A900A4FCC9 /* respondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */; };
 		F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0D27FC735200A4FCC9 /* CardView.swift */; };
+		F6061D5027FCB53800A4FCC9 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */; };
+		F6061D5127FCB53800A4FCC9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */; };
+		F6061D5327FCB55C00A4FCC9 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,9 @@
 		F6061D0927FC022100A4FCC9 /* responseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseData.swift; sourceTree = "<group>"; };
 		F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondeModel.swift; sourceTree = "<group>"; };
 		F6061D0D27FC735200A4FCC9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		FC02D6829B82F4A407EA50DB /* Pods-BBVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBVK.debug.xcconfig"; path = "Target Support Files/Pods-BBVK/Pods-BBVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +179,7 @@
 		AC2188CB27F9E56700545EC9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D5227FCB55C00A4FCC9 /* DetailTransactionViewController.swift */,
 				AC2188CC27F9E58700545EC9 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -215,6 +222,8 @@
 		ACFA968027F9274B00323A37 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D4E27FCB53800A4FCC9 /* Contacts */,
+				F6061D4C27FCB53800A4FCC9 /* Transactions */,
 				F6061CFA27FB98DE00A4FCC9 /* Login */,
 				AC2188CB27F9E56700545EC9 /* Home */,
 				AC2188CA27F973B900545EC9 /* Register */,
@@ -351,6 +360,22 @@
 				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F6061D4C27FCB53800A4FCC9 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D4D27FCB53800A4FCC9 /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		F6061D4E27FCB53800A4FCC9 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D4F27FCB53800A4FCC9 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +558,7 @@
 				ACFE61C127F8EC17009EE2C8 /* PasswordCreationView.swift in Sources */,
 				ACFE61C727F8EC17009EE2C8 /* TelefonoViewController.swift in Sources */,
 				F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */,
+				F6061D5027FCB53800A4FCC9 /* TransactionsViewController.swift in Sources */,
 				AC2188DD27FA751500545EC9 /* SendMoney.swift in Sources */,
 				ACFE61C627F8EC17009EE2C8 /* VerificacionIdentidadWelcome.swift in Sources */,
 				F6061D0E27FC735200A4FCC9 /* CardView.swift in Sources */,
@@ -556,6 +582,7 @@
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
 				ACFE61BC27F8EC17009EE2C8 /* constants.swift in Sources */,
+				F6061D5127FCB53800A4FCC9 /* ContactsViewController.swift in Sources */,
 				AC2188DB27FA6E6A00545EC9 /* TransactionDetailsViewController.swift in Sources */,
 				F6061CF527FB8F3100A4FCC9 /* RegisteManager.swift in Sources */,
 				F6061CFD27FB98DE00A4FCC9 /* ViewController.swift in Sources */,
@@ -566,6 +593,7 @@
 				AC2188E127FA7CDF00545EC9 /* LoadingProcessingViewController.swift in Sources */,
 				ACFE61BD27F8EC17009EE2C8 /* BBVKUtilities.swift in Sources */,
 				AC2188D927FA2D2800545EC9 /* UserModelData.swift in Sources */,
+				F6061D5327FCB55C00A4FCC9 /* DetailTransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
