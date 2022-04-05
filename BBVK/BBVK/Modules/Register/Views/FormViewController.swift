@@ -119,6 +119,8 @@ class FormViewController: UIViewController {
         let validation = registerManager!.validatingData(name: nameTextField.text!, lastName: lastNameTextField.text!, occuppation: jobTextField.text!, birthDate: dateTextField.text!)
         if validation == true {
         let vc = CountryViewController()
+            vc.registerManager = self.registerManager
+            print(registerManager?.userModel.userEmail ?? "")
         vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)}
         else {
@@ -209,7 +211,7 @@ class FormViewController: UIViewController {
     
     @objc func donedatePicker(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
         datePickerView.isHidden = true

@@ -46,6 +46,11 @@
 		F6061CF527FB8F3100A4FCC9 /* RegisteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */; };
 		F6061CFD27FB98DE00A4FCC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */; };
 		F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */; };
+		F6061D0127FBFC6000A4FCC9 /* LoginConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0027FBFC6000A4FCC9 /* LoginConnectionManager.swift */; };
+		F6061D0427FBFCD000A4FCC9 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0327FBFCD000A4FCC9 /* LoginModel.swift */; };
+		F6061D0827FBFE0100A4FCC9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0727FBFE0100A4FCC9 /* LoginManager.swift */; };
+		F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0927FC022100A4FCC9 /* responseData.swift */; };
+		F6061D0C27FC04A900A4FCC9 /* respondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +114,11 @@
 		F6061CF427FB8F3100A4FCC9 /* RegisteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteManager.swift; sourceTree = "<group>"; };
 		F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F6061D0027FBFC6000A4FCC9 /* LoginConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConnectionManager.swift; sourceTree = "<group>"; };
+		F6061D0327FBFCD000A4FCC9 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F6061D0727FBFE0100A4FCC9 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		F6061D0927FC022100A4FCC9 /* responseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseData.swift; sourceTree = "<group>"; };
+		F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,10 +294,31 @@
 		F6061CFA27FB98DE00A4FCC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F6061D0227FBFCC000A4FCC9 /* Model */,
+				F6061CFF27FBFC4B00A4FCC9 /* ModelView */,
 				F6061CFB27FB98DE00A4FCC9 /* ViewController.swift */,
 				F6061CFC27FB98DE00A4FCC9 /* LogInViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F6061CFF27FBFC4B00A4FCC9 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D0027FBFC6000A4FCC9 /* LoginConnectionManager.swift */,
+				F6061D0727FBFE0100A4FCC9 /* LoginManager.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		F6061D0227FBFCC000A4FCC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6061D0927FC022100A4FCC9 /* responseData.swift */,
+				F6061D0327FBFCD000A4FCC9 /* LoginModel.swift */,
+				F6061D0B27FC04A900A4FCC9 /* respondeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACFE61C227F8EC17009EE2C8 /* ThankYouViewController.swift in Sources */,
+				F6061D0C27FC04A900A4FCC9 /* respondeModel.swift in Sources */,
 				ACFE61C127F8EC17009EE2C8 /* PasswordCreationView.swift in Sources */,
 				ACFE61C727F8EC17009EE2C8 /* TelefonoViewController.swift in Sources */,
 				F6061CFE27FB98DE00A4FCC9 /* LogInViewController.swift in Sources */,
@@ -436,8 +468,12 @@
 				ACFE61C827F8EC17009EE2C8 /* DataLoginViewController.swift in Sources */,
 				ACFA967C27F9250700323A37 /* CodeTableVewCell.swift in Sources */,
 				ACFE61BE27F8EC17009EE2C8 /* Utils.swift in Sources */,
+				F6061D0427FBFCD000A4FCC9 /* LoginModel.swift in Sources */,
 				ACFA967D27F9250700323A37 /* CountryViewController.swift in Sources */,
 				ACFE617B27F8EA11009EE2C8 /* AppDelegate.swift in Sources */,
+				F6061D0827FBFE0100A4FCC9 /* LoginManager.swift in Sources */,
+				F6061D0A27FC022100A4FCC9 /* responseData.swift in Sources */,
+				F6061D0127FBFC6000A4FCC9 /* LoginConnectionManager.swift in Sources */,
 				AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */,
 				ACFE61C327F8EC17009EE2C8 /* BienvenidaViewController.swift in Sources */,
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,

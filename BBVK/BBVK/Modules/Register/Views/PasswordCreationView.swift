@@ -12,6 +12,7 @@ class PasswordViewControllers: UIViewController{
    let bbvkUtilities = initializerUI()
     var passwordTextField2 = UITextField()
     var passwordTextField = UITextField()
+    var registerManager : RegisterManager?
    
    override func viewDidLoad() {
       bbvkUtilities.MainViewController(viewControllerParam: view)
@@ -81,11 +82,11 @@ class PasswordViewControllers: UIViewController{
 extension PasswordViewControllers{
    
    @objc func sendData(){
-       let registerManager = RegisterManager()
-       let validationPassword = registerManager.validatingPassword(password: passwordTextField.text!, secondPassword: passwordTextField2.text!)
+       let validationPassword = registerManager!.validatingPassword(password: passwordTextField.text!, secondPassword: passwordTextField2.text!)
        print(validationPassword)
        if validationPassword == true {
       let sendDataVC = LoadingViewController()
+           sendDataVC.registerManager = self.registerManager
       sendDataVC.modalPresentationStyle = .fullScreen
       present(sendDataVC, animated: true, completion: nil)
        }else {

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct ConnectionManager{
-   let userModelInfo = UserModel()
+    var userModelInfo: UserModel?
    
    func postRegister(){
       
@@ -21,7 +21,7 @@ struct ConnectionManager{
       request.httpMethod = "POST"
        
       // HTTP Request Parameters which will be sent in HTTP Request Body
-      let postString = "email=\(userModelInfo.userEmail)&name=\(userModelInfo.userName)&lastName=\(userModelInfo.userLastNAme)&birthDate=\(userModelInfo.userBirthDate)&password=\(userModelInfo.userSpecialWord)&phone=\(userModelInfo.userPhone)&identityImageType=\(userModelInfo.useridentityImageType)&occupation=\(userModelInfo.occupation)&identityImage=\(userModelInfo.userIdentytyImage)";
+       let postString = "email=\(userModelInfo!.userEmail)&name=\(userModelInfo!.userName)&lastName=\(userModelInfo!.userLastNAme)&birthDate=\(userModelInfo!.userBirthDate)&password=\(userModelInfo!.userSpecialWord)&phone=\(userModelInfo!.userPhone)&identityImageType=\(userModelInfo!.useridentityImageType)&occupation=\(userModelInfo!.occupation)&identityImage=\(userModelInfo!.userIdentytyImage)";
       print(postString)
       let newPosrtString = postString.replacingOccurrences(of: "+", with: "%2B")
       // Set HTTP Request Body

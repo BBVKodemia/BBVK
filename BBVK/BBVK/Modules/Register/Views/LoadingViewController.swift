@@ -10,7 +10,8 @@ import UIKit
 
 class LoadingViewController: UIViewController{
    let bbvkUtilities = initializerUI()
-    let registerManager = RegisterManager()
+    var registerManager : RegisterManager?
+    var conectionManager = ConnectionManager()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -30,16 +31,8 @@ class LoadingViewController: UIViewController{
       view.addSubview(waitingLabel)
       
       waitingLabel.addAnchors(left: 20, top: 10, right: 20, bottom: nil, withAnchor: .top, relativeToView: loadingLogo)
-       
-
-       print(registerManager.userModel.occupation)
-       print(registerManager.userModel.useridentityImageType)
-       print(registerManager.userModel.userSpecialWord)
-//       print(userModel.userIdentytyImage)
-       print(registerManager.userModel.userName)
-       print(registerManager.userModel.userLastNAme)
-       print(registerManager.userModel.userPhone)
-       print(registerManager.userModel.userBirthDate)
+       conectionManager.userModelInfo = registerManager?.userModel
+       conectionManager.postRegister()
       
       DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
          

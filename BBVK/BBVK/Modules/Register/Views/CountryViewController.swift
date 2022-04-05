@@ -122,6 +122,7 @@ class CountryViewController: UIViewController {
     
     @objc func continueFlow() {
        let verificacionVC = verificacionIdentidadWelcome()
+        verificacionVC.registerManager = self.registerManager
         if registerManager!.validatingPhone(lada: codeCountryTextField.text!, phone: phoneTextField.text!) == false{
             let alert = bbvkUtilities.alertViewSetter(tittle: "Some fields are empty", message: "Please fill all the fields in order to proceed", buttontittle: "ok")
                      self.present(alert, animated: true, completion: nil)

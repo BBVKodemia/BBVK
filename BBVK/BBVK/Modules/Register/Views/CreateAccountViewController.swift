@@ -79,10 +79,11 @@ extension CreateAccountViewController{
    
    @objc func goCreateAccount(){
        
- 
+       
        let emailValidation = registerManager.validateEmail(emailText: emailTextfield.text ?? "")
        if emailValidation == true{
        let createAccount = FormViewController()
+           createAccount.registerManager = self.registerManager
        createAccount.modalPresentationStyle = .fullScreen
        present(createAccount, animated: true)
        }else{

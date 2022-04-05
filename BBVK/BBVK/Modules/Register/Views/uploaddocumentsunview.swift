@@ -101,6 +101,7 @@ extension UploadDocumentViewController {
         let validation = registerManager!.validateImage(imageText: image64String)
         if  validation == true  {
             let passwordVC = PasswordViewControllers()
+            passwordVC.registerManager = self.registerManager
             passwordVC.modalPresentationStyle = .fullScreen
             present(passwordVC, animated: true, completion: nil)
         }else{
@@ -142,6 +143,6 @@ extension UploadDocumentViewController:UINavigationControllerDelegate, UIImagePi
     
     
     func convertImageToBase64String (img: UIImage) -> String {
-        return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+        return img.jpegData(compressionQuality: 0.0)?.base64EncodedString() ?? ""
     }
 }
