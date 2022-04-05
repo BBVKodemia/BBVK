@@ -477,6 +477,7 @@
 				F6061D0127FBFC6000A4FCC9 /* LoginConnectionManager.swift in Sources */,
 				AC2188D527F9F80400545EC9 /* ConectionManager.swift in Sources */,
 				ACFE61C327F8EC17009EE2C8 /* BienvenidaViewController.swift in Sources */,
+				C7C47EEE27FCA19300656FD8 /* NewContactViewController.swift in Sources */,
 				AC2188DF27FA75A200545EC9 /* TransferMoney.swift in Sources */,
 				ACFE617D27F8EA11009EE2C8 /* SceneDelegate.swift in Sources */,
 				ACFE61BC27F8EC17009EE2C8 /* constants.swift in Sources */,
