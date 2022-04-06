@@ -28,19 +28,19 @@ class ViewController: UIViewController {
         
        
         
-        let DatosLabel = utilities.uiLabelSetter(labelString: "Say goodbye to your money problems, make the money work for you!", labelSize: 24 ,textaligment:.center, isBold: true, isHighLighted: false)
-        DatosLabel.textColor = UIColor.white
-        DatosLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        DatosLabel.numberOfLines = 2
-        view.addSubview(DatosLabel)
-        DatosLabel.addAnchorsAndSize(width: nil, height: 80, left: 20, top: 120, right: 20, bottom: nil, withAnchor: nil, relativeToView: bankodemia)
+        let datosLabel = utilities.uiLabelSetter(labelString: "Say goodbye to your money problems, make the money work for you!", labelSize: 24 ,textaligment:.center, isBold: true, isHighLighted: false)
+        datosLabel.numberOfLines = 0
+        datosLabel.textColor = UIColor.white
+        datosLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        view.addSubview(datosLabel)
+        datosLabel.addAnchorsAndSize(width: nil, height: 200, left: 20, top: 120, right: 20, bottom: nil, withAnchor: nil, relativeToView: bankodemia)
 
         
         
         
         let iconoCelular = utilities.uiImageViewSetter(uiImageName: "iconoCelular")
         view.addSubview(iconoCelular)
-        iconoCelular.addAnchorsAndSize(width: 200, height: 350, left: 50, top: height / 3, right: 50, bottom: 240, withAnchor: nil, relativeToView: DatosLabel)
+        iconoCelular.addAnchorsAndSize(width: 200, height: 350, left: 50, top: height / 3, right: 50, bottom: 240, withAnchor: nil, relativeToView: datosLabel)
        
         
         let accountCreateButton = utilities.uiButtonSetter(ispurple: false, isgray: false, isgreen: true, buttonText: "Sing Up")
